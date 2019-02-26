@@ -1,45 +1,99 @@
+# `@react-native-community/checkbox`
+[![CircleCI Status](https://img.shields.io/circleci/project/github/react-native-community/react-native-checkbox/master.svg)](https://circleci.com/gh/react-native-community/workflows/react-native-checkbox/tree/master) ![Supports Android and iOS](https://img.shields.io/badge/platforms-android%20|%20ios-lightgrey.svg) ![MIT License](https://img.shields.io/npm/l/@react-native-community/checkbox.svg)
 
-# react-native-react-native-checkbox
+React Native component used to select a single value from a range of values.
 
 ## Getting started
 
-`$ npm install react-native-react-native-checkbox --save`
+`yarn add @react-native-community/checkbox`
+
+or
+
+`npm install @react-native-community/checkbox --save`
 
 ### Mostly automatic installation
 
-`$ react-native link react-native-react-native-checkbox`
+`react-native link @react-native-community/checkbox`
 
 ### Manual installation
 
+<details>
+<summary>Manually link the library on Android</summary>
+   
+#### `android/settings.gradle`
+```groovy
+include ':@react-native-community/checkbox'
+project(':@react-native-community/checkbox').projectDir = new File(rootProject.projectDir, '../node_modules/@react-native-community/checkbox/android')
+```
 
-#### iOS
+#### `android/app/build.gradle`
+```groovy
+dependencies {
+   ...
+   implementation project(':@react-native-community/checkbox')
+}
+```
 
-1. In XCode, in the project navigator, right click `Libraries` ➜ `Add Files to [your project's name]`
-2. Go to `node_modules` ➜ `react-native-react-native-checkbox` and add `RNCReactNativeCheckbox.xcodeproj`
-3. In XCode, in the project navigator, select your project. Add `libRNCReactNativeCheckbox.a` to your project's `Build Phases` ➜ `Link Binary With Libraries`
-4. Run your project (`Cmd+R`)<
+#### `android/app/src/main/.../MainApplication.java`
+On top, where imports are:
 
-#### Android
+```java
+import com.reactnativecommunity.checkbox;
+```
 
-1. Open up `android/app/src/main/java/[...]/MainActivity.java`
-  - Add `import com.reactnativecommunity.checkbox.RNCReactNativeCheckboxPackage;` to the imports at the top of the file
-  - Add `new RNCReactNativeCheckboxPackage()` to the list returned by the `getPackages()` method
-2. Append the following lines to `android/settings.gradle`:
-  	```
-  	include ':react-native-react-native-checkbox'
-  	project(':react-native-react-native-checkbox').projectDir = new File(rootProject.projectDir, 	'../../node_modules/react-native-react-native-checkbox/android')
-  	```
-3. Insert the following lines inside the dependencies block in `android/app/build.gradle`:
-  	```
-      compile project(':react-native-react-native-checkbox')
-  	```
+Add the `checkbox` class to your list of exported packages.
 
+```java
+@Override
+protected List<ReactPackage> getPackages() {
+    return Arrays.asList(
+            new MainReactPackage(),
+            new CheckboxPackage()
+    );
+}
+```
+</details>
+
+## Migrating from the core `react-native` module
+This module was created when the CheckBox was split out from the core of React Native. To migrate to this module you need to follow the installation instructions above and then change you imports from:
+
+```javascript
+import { CheckBox } from 'react-native';
+```
+
+to:
+
+```javascript
+import CheckBox from '@react-native-community/checkbox';
+```
 
 ## Usage
-```javascript
-import RNCReactNativeCheckbox from 'react-native-react-native-checkbox';
 
-// TODO: What to do with the module?
-RNCReactNativeCheckbox;
+### Example
+
+```javascript
+import CheckBox from '@react-native-community/checkbox';
 ```
-  
+
+```javascript
+  <CheckBox
+    style={{width: 200, height: 40}}
+    minimumValue={0}
+    maximumValue={1}
+    minimumTrackTintColor="#FFFFFF"
+    maximumTrackTintColor="#000000"
+    thumbTouchSize={{width: 50, height: 40}}
+  />
+```
+
+Check out the [example project](example) for more examples.
+
+### Props
+@TODO
+
+## Contributors
+
+This module was extracted from `react-native` core. Please reffer to https://github.com/react-native-community/react-native-checkbox/graphs/contributors for the complete list of contributors.
+
+## License
+The library is released under the MIT licence. For more information see `LICENSE`.
