@@ -13,7 +13,7 @@ const React = require('React');
 const StyleSheet = require('StyleSheet');
 const processColor = require('processColor');
 
-const AndroidCheckBoxNativeComponent = require('AndroidCheckBoxNativeComponent');
+const AndroidCheckBoxNativeComponent = require('./AndroidCheckBoxNativeComponent');
 const nullthrows = require('nullthrows');
 const setAndForwardRef = require('setAndForwardRef');
 

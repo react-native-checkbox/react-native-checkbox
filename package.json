@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "React Native Checkbox native modules for iOS & Android",
   "author": "Nicholas Lee <nicholaslee119@gmail.com>",
+  "main": "js/CheckBox",
   "publishConfig": {
     "access": "public"
   },
