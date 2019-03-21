@@ -1,0 +1,6 @@
+rootProject.name = 'CheckboxExample'
+
+include ':app'
+include ':rnCheckbox'
+
+project(':rnCheckbox').projectDir = new File(rootProject.projectDir, '../../android')

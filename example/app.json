@@ -1,0 +1,5 @@
+{
+  "name": "CheckboxExample",
+  "displayName": "CheckboxExample",
+  "config": "rn-cli.config.js"
+}
