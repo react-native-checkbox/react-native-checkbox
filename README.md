@@ -3,6 +3,8 @@
 
 React Native component used to select a single value from a range of values.
 
+![Alt text](screenShots/demo.png)
+
 ## Getting started
 
 `yarn add @react-native-community/checkbox`
@@ -77,12 +79,8 @@ import CheckBox from '@react-native-community/checkbox';
 
 ```javascript
   <CheckBox
-    style={{width: 200, height: 40}}
-    minimumValue={0}
-    maximumValue={1}
-    minimumTrackTintColor="#FFFFFF"
-    maximumTrackTintColor="#000000"
-    thumbTouchSize={{width: 50, height: 40}}
+    value={true}
+    disabled={false}
   />
 ```
 

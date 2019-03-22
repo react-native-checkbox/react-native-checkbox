@@ -23,7 +23,7 @@ export default class App extends Component<Props> {
   render() {
     return (
       <View style={styles.container}>
-        <Checkbox></Checkbox>
+        <Checkbox disabled={true}></Checkbox>
         <Checkbox></Checkbox>
         <Checkbox></Checkbox>
         <Text style={styles.welcome}>Welcome to React Native Checkbox!</Text>
