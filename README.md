@@ -3,6 +3,8 @@
 
 React Native component used to select a single value from a range of values.
 
+![Alt text](screenShots/demo.png)
+
 ## Getting started
 
 `yarn add @react-native-community/checkbox`
