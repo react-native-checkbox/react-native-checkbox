@@ -4,7 +4,7 @@ import * as React from 'react';
 import renderer from 'react-test-renderer';
 import Checkbox from '../CheckBox';
 
- describe('<Checkbox />', () => {
+describe('<Checkbox />', () => {
   it('renders enabled Checkbox', () => {
     const tree = renderer
       .create(
@@ -35,4 +35,3 @@ import Checkbox from '../CheckBox';
      expect(tree).toMatchSnapshot();
   });
 });
-  
