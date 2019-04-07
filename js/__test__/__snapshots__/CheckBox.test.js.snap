@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Checkbox /> renders Checkbox with value 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "alignSelf": "flex-start",
+        "borderColor": "red",
+        "borderWidth": 1,
+      },
+      undefined,
+    ]
+  }
+/>
+`;
+
+exports[`<Checkbox /> renders disabled Checkbox 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "alignSelf": "flex-start",
+        "borderColor": "red",
+        "borderWidth": 1,
+      },
+      undefined,
+    ]
+  }
+/>
+`;
+
+exports[`<Checkbox /> renders enabled Checkbox 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "alignSelf": "flex-start",
+        "borderColor": "red",
+        "borderWidth": 1,
+      },
+      undefined,
+    ]
+  }
+/>
+`;
