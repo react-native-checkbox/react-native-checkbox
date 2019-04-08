@@ -51,6 +51,13 @@
   "jest": {
     "preset": "react-native"
   },
+  "prettier": {
+    "singleQuote": true,
+    "trailingComma": "all",
+    "bracketSpacing": false,
+    "jsxBracketSameLine": true,
+    "parser": "flow"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/react-native-community/react-native-checkbox.git"
