@@ -9,7 +9,7 @@
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View} from 'react-native';
 
-import Checkbox from '@react-native-community/checkbox'
+import Checkbox from '@react-native-community/checkbox';
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -23,9 +23,9 @@ export default class App extends Component<Props> {
   render() {
     return (
       <View style={styles.container}>
-        <Checkbox disabled={true}></Checkbox>
-        <Checkbox></Checkbox>
-        <Checkbox></Checkbox>
+        <Checkbox disabled={true} />
+        <Checkbox />
+        <Checkbox />
         <Text style={styles.welcome}>Welcome to React Native Checkbox!</Text>
         <Text style={styles.instructions}>{instructions}</Text>
       </View>
