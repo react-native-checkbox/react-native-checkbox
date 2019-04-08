@@ -4,7 +4,8 @@ module.exports = {
   parser: "babel-eslint",
 
   env: {
-    es6: true
+    es6: true,
+    jest: true,
   },
 
   plugins: [
@@ -295,16 +296,3 @@ module.exports = {
     }
   }
 };
-© 2019 GitHub, Inc.
-Terms
-Privacy
-Security
-Status
-Help
-Contact GitHub
-Pricing
-API
-Training
-Blog
-About
-Press h to open a hovercard with more details.
