@@ -87,11 +87,23 @@ import CheckBox from '@react-native-community/checkbox';
 Check out the [example project](example) for more examples.
 
 ### Props
-@TODO
+
+
+[View props...](https://facebook.github.io/react-native/docs/view#props)
+
+| Prop name     | Description                                                                                                                                                                                                           |
+| ------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| disabled      | If true the user won't be able to toggle the checkbox. Default value is false.                                                                                                                                        |
+| onChange      | Invoked on change with the native event.                                                                                                                                                                              |
+| onValueChange | Invoked with the new boolean value when it changes.                                                                                                                                                                   |
+| value         | The value of the checkbox. If true the checkbox will be turned on. Default value is false.                                                                                                                            |
+| tintColors    | An object with the following shape: `{|true?: ?ColorValue, false?: ?ColorValue|}`. The color value for `true` will be used when the checkbox is checked, and the color value for `false` will be used when it is off. |
+| testID        | Used to locate this view in end-to-end tests.                                                                                                                                                                         |
+
 
 ## Contributors
 
-This module was extracted from `react-native` core. Please reffer to https://github.com/react-native-community/react-native-checkbox/graphs/contributors for the complete list of contributors.
+This module was extracted from `react-native` core. Please refer to https://github.com/react-native-community/react-native-checkbox/graphs/contributors for the complete list of contributors.
 
 ## License
 The library is released under the MIT licence. For more information see `LICENSE`.
