@@ -97,7 +97,7 @@ Check out the [example project](example) for more examples.
 | onChange      | Invoked on change with the native event.                                                                                                                                                                              |
 | onValueChange | Invoked with the new boolean value when it changes.                                                                                                                                                                   |
 | value         | The value of the checkbox. If true the checkbox will be turned on. Default value is false.                                                                                                                            |
-| tintColors    | An object with the following shape: `{|true?: ?ColorValue, false?: ?ColorValue|}`. The color value for `true` will be used when the checkbox is checked, and the color value for `false` will be used when it is off. |
+| tintColors    | An object with the following shape: `{ true?: ?ColorValue, false?: ?ColorValue }`. The color value for `true` will be used when the checkbox is checked, and the color value for `false` will be used when it is off. |
 | testID        | Used to locate this view in end-to-end tests.                                                                                                                                                                         |
 
 
