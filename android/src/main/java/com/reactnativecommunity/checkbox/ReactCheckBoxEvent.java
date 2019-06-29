@@ -12,13 +12,13 @@ import com.facebook.react.uimanager.events.Event;
 import com.facebook.react.uimanager.events.RCTEventEmitter;
 
 /** Event emitted by a CheckBoxManager once a checkbox is manipulated. */
-/*package*/ class ReactCheckBoxEvent extends Event<CheckBoxEvent> {
+/*package*/ class ReactCheckBoxEvent extends Event<ReactCheckBoxEvent> {
 
   public static final String EVENT_NAME = "topChange";
 
   private final boolean mIsChecked;
 
-  public CheckBoxEvent(int viewId, boolean isChecked) {
+  public ReactCheckBoxEvent(int viewId, boolean isChecked) {
     super(viewId);
     mIsChecked = isChecked;
   }
