@@ -7,6 +7,8 @@ module.exports = {
   projectRoot: __dirname,
   watchFolders: [reactNativeCheckboxRoot],
   resolver: {
-    blacklistRE: blacklist([new RegExp(`${reactNativeCheckboxRoot}/node_modules/react-native/.*`)]),
+    blacklistRE: blacklist([
+      new RegExp(`${reactNativeCheckboxRoot}/node_modules/react-native/.*`),
+    ]),
   },
 };
