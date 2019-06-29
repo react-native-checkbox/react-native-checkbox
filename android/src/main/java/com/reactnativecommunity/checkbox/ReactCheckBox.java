@@ -10,7 +10,7 @@ import android.content.Context;
 import android.support.v7.widget.AppCompatCheckBox;
 
 /** CheckBox that has its value controlled by JS. */
-/*package*/ class CheckBox extends AppCompatCheckBox {
+/*package*/ class ReactCheckBox extends AppCompatCheckBox {
 
   private boolean mAllowChange;
 
