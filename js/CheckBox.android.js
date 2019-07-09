@@ -9,18 +9,18 @@
  */
 'use strict';
 
-const React = require('React');
-const StyleSheet = require('StyleSheet');
-const processColor = require('processColor');
+const nullthrows = require('nullthrows');
+const React = require('react');
+const {StyleSheet} = require('react-native');
+const processColor = require('react-native/Libraries/StyleSheet/processColor');
+const setAndForwardRef = require('react-native/Libraries/Utilities/setAndForwardRef');
 
 const AndroidCheckBoxNativeComponent = require('./AndroidCheckBoxNativeComponent');
-const nullthrows = require('nullthrows');
-const setAndForwardRef = require('setAndForwardRef');
 
-import type {ViewProps} from 'ViewPropTypes';
-import type {SyntheticEvent} from 'CoreEventTypes';
-import type {NativeComponent} from 'ReactNative';
-import type {ColorValue} from 'StyleSheetTypes';
+import type {ViewProps} from 'react-native/Libraries/Components/View/ViewPropTypes';
+import type {NativeComponent} from 'react-native/Libraries/Renderer/shims/ReactNative';
+import type {ColorValue} from 'react-native/Libraries/StyleSheet/StyleSheetTypes';
+import type {SyntheticEvent} from 'react-native/Libraries/Types/CoreEventTypes';
 
 type CheckBoxEvent = SyntheticEvent<
   $ReadOnly<{|
