@@ -14,7 +14,7 @@ import com.facebook.react.bridge.JavaScriptModule;
 public class ReactCheckBoxPackage implements ReactPackage {
     @Override
     public List<NativeModule> createNativeModules(ReactApplicationContext reactContext) {
-      return Collections.emptyList();
+      return Arrays.<NativeModule>asList(new RNCReactNativeCheckboxModule(reactContext));
     }
 
     // Deprecated from RN 0.47
