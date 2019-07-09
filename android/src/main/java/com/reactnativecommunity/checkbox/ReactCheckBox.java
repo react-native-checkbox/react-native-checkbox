@@ -14,7 +14,7 @@ import android.support.v7.widget.AppCompatCheckBox;
 
   private boolean mAllowChange;
 
-  public CheckBox(Context context) {
+  public ReactCheckBox(Context context) {
     super(context);
     mAllowChange = true;
   }
