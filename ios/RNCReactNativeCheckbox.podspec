@@ -1,24 +1,24 @@
+require 'json'
+
+package = JSON.parse(File.read(File.join(__dir__, '../package.json')))
 
 Pod::Spec.new do |s|
-  s.name         = "RNCReactNativeCheckbox"
-  s.version      = "1.0.0"
-  s.summary      = "RNCReactNativeCheckbox"
-  s.description  = <<-DESC
-                  RNCReactNativeCheckbox
-                   DESC
-  s.homepage     = ""
-  s.license      = "MIT"
-  # s.license      = { :type => "MIT", :file => "FILE_LICENSE" }
-  s.author             = { "author" => "author@domain.cn" }
-  s.platform     = :ios, "7.0"
-  s.source       = { :git => "https://github.com/author/RNCReactNativeCheckbox.git", :tag => "master" }
+  s.name         = package['name']
+  s.version      = package['version']
+  s.summary      = package['description']
+  s.license      = package['license']
+
+  s.authors      = package['author']
+  s.homepage     = package['homepage']
+
+  s.description  = package['description']
+  s.platform     = :ios, "9.0"
+
+  s.source       = { :git => "https://github.com/react-native-community/react-native-checkbox.git", :tag => "master" }
   s.source_files  = "RNCReactNativeCheckbox/**/*.{h,m}"
   s.requires_arc = true
 
-
   s.dependency "React"
-  #s.dependency "others"
 
 end
 
-  
