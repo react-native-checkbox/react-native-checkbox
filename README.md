@@ -26,15 +26,15 @@ or
    
 #### `android/settings.gradle`
 ```groovy
-include ':@react-native-community/checkbox'
-project(':@react-native-community/checkbox').projectDir = new File(rootProject.projectDir, '../node_modules/@react-native-community/checkbox/android')
+include ':react-native-community-checkbox'
+project(':react-native-community-checkbox').projectDir = new File(rootProject.projectDir, '../node_modules/@react-native-community/checkbox/android')
 ```
 
 #### `android/app/build.gradle`
 ```groovy
 dependencies {
    ...
-   implementation project(':@react-native-community/checkbox')
+   implementation project(':react-native-community-checkbox')
 }
 ```
 
@@ -42,7 +42,7 @@ dependencies {
 On top, where imports are:
 
 ```java
-import com.reactnativecommunity.checkbox;
+import com.reactnativecommunity.checkbox.ReactCheckBoxPackage;
 ```
 
 Add the `checkbox` class to your list of exported packages.
@@ -52,7 +52,7 @@ Add the `checkbox` class to your list of exported packages.
 protected List<ReactPackage> getPackages() {
     return Arrays.asList(
             new MainReactPackage(),
-            new CheckboxPackage()
+            new ReactCheckBoxPackage()
     );
 }
 ```
