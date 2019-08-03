@@ -1,5 +1,5 @@
 {
-  "name": "react-native-checkbox",
+  "name": "@react-native-community/checkbox",
   "version": "0.1.0",
   "license": "MIT",
   "description": "React Native Checkbox native modules for iOS & Android",
