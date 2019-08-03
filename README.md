@@ -1,6 +1,8 @@
 # `@react-native-community/checkbox`
 [![CircleCI Status](https://img.shields.io/circleci/project/github/react-native-community/react-native-checkbox/master.svg)](https://circleci.com/gh/react-native-community/workflows/react-native-checkbox/tree/master) ![Supports Android and iOS](https://img.shields.io/badge/platforms-android%20|%20ios-lightgrey.svg) ![MIT License](https://img.shields.io/npm/l/@react-native-community/checkbox.svg)
 
+**Note: checkbox doesn't support iOS. Please use Switch for iOS.**
+
 React Native component used to select a single value from a range of values.
 
 ![Alt text](screenShots/demo.png)
