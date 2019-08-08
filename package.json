@@ -61,5 +61,6 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/react-native-community/react-native-checkbox.git"
-  }
+  },
+  "homepage": "https://github.com/react-native-community/react-native-checkbox#readme"
 }

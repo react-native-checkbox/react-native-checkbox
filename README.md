@@ -15,6 +15,10 @@ or
 
 ### Mostly automatic installation
 
+From react-native >= 0.60 autolinking will take care of the link, just don't forget to run pod install after adding this pakage
+
+for react-native =< 0.59.X
+
 `react-native link @react-native-community/checkbox`
 
 ### Manual installation
