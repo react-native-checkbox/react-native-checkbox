@@ -1,8 +1,8 @@
 {
   "name": "@react-native-community/checkbox",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "license": "MIT",
-  "description": "React Native Checkbox native modules for iOS & Android",
+  "description": "React Native Checkbox native modules for Android",
   "author": "Nicholas Lee <nicholaslee119@gmail.com>",
   "main": "js/CheckBox",
   "publishConfig": {
@@ -61,5 +61,6 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/react-native-community/react-native-checkbox.git"
-  }
+  },
+  "homepage": "https://github.com/react-native-community/react-native-checkbox#readme"
 }
