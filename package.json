@@ -1,32 +1,40 @@
 {
   "name": "@react-native-community/checkbox",
   "version": "0.2.0",
-  "license": "MIT",
   "description": "React Native Checkbox native modules for Android",
+  "keywords": [
+    "checkbox",
+    "react native",
+    "react-native"
+  ],
+  "homepage": "https://github.com/react-native-community/react-native-checkbox#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/react-native-community/react-native-checkbox.git"
+  },
+  "license": "MIT",
   "author": "Nicholas Lee <nicholaslee119@gmail.com>",
   "main": "js/CheckBox",
-  "publishConfig": {
-    "access": "public"
-  },
   "scripts": {
+    "ci:test:flow": "yarn test:flow",
+    "ci:test:js": "yarn test:js",
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "test": "yarn test:eslint && yarn test:flow && yarn test:jest",
     "test:eslint": "eslint 'js/**/*.js' 'example/**/*.js'",
     "test:flow": "flow check",
-    "test:js": "jest",
-    "ci:test:flow": "yarn test:flow",
-    "ci:test:js": "yarn test:js"
+    "test:js": "jest"
   },
-  "keywords": [
-    "react-native",
-    "react native",
-    "checkbox"
-  ],
+  "prettier": {
+    "bracketSpacing": false,
+    "jsxBracketSameLine": true,
+    "parser": "flow",
+    "singleQuote": true,
+    "trailingComma": "all"
+  },
+  "jest": {
+    "preset": "react-native"
+  },
   "dependencies": {},
-  "peerDependencies": {
-    "react": "*",
-    "react-native": "*"
-  },
   "devDependencies": {
     "@babel/plugin-proposal-class-properties": "^7.4.0",
     "babel-core": "^7.0.0-bridge.0",
@@ -48,19 +56,11 @@
     "react-native": "0.58.4",
     "react-test-renderer": "^16.8.6"
   },
-  "jest": {
-    "preset": "react-native"
+  "peerDependencies": {
+    "react": "*",
+    "react-native": "*"
   },
-  "prettier": {
-    "singleQuote": true,
-    "trailingComma": "all",
-    "bracketSpacing": false,
-    "jsxBracketSameLine": true,
-    "parser": "flow"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/react-native-community/react-native-checkbox.git"
-  },
-  "homepage": "https://github.com/react-native-community/react-native-checkbox#readme"
+  "publishConfig": {
+    "access": "public"
+  }
 }
