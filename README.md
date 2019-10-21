@@ -109,7 +109,7 @@ Check out the [example project](example) for more examples.
 
 ## Contributors
 
-This module was extracted from `react-native` core. Please refer to https://github.com/react-native-community/react-native-checkbox/graphs/contributors for the complete list of contributors.
+This module was extracted from `react-native` core.
 
 ## License
 The library is released under the MIT licence. For more information see `LICENSE`.
