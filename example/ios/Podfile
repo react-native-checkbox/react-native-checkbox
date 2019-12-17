@@ -34,7 +34,7 @@ target 'CheckboxExample' do
   pod 'glog', :podspec => '../node_modules/react-native/third-party-podspecs/glog.podspec'
   pod 'Folly', :podspec => '../node_modules/react-native/third-party-podspecs/Folly.podspec'
 
-  target 'CheckBoxExampleTests' do
+  target 'CheckboxExampleTests' do
     inherit! :search_paths
     # Pods for testing
   end
@@ -42,10 +42,10 @@ target 'CheckboxExample' do
   use_native_modules!
 end
 
-target 'CheckBoxExample-tvOS' do
-  # Pods for CheckBoxExample-tvOS
+target 'CheckboxExample-tvOS' do
+  # Pods for CheckboxExample-tvOS
 
-  target 'CheckBoxExample-tvOSTests' do
+  target 'CheckboxExample-tvOSTests' do
     inherit! :search_paths
     # Pods for testing
   end
