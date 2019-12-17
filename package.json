@@ -32,7 +32,8 @@
     "trailingComma": "all"
   },
   "jest": {
-    "preset": "react-native"
+    "preset": "react-native",
+    "testPathIgnorePatterns":["node_modules","example"]
   },
   "dependencies": {},
   "devDependencies": {
