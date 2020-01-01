@@ -4,85 +4,88 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
- * @flow strict-local
- * @format
  */
 'use strict';
 
-const nullthrows = require('nullthrows');
-const React = require('react');
-const {StyleSheet} = require('react-native');
-const processColor = require('react-native/Libraries/StyleSheet/processColor');
-const setAndForwardRef = require('react-native/Libraries/Utilities/setAndForwardRef');
+import nullthrows from 'nullthrows';
+import React from 'react';
+import {
+  StyleSheet,
+  processColor,
+  ViewProps,
+  NativeComponent,
+  NativeSyntheticEvent,
+} from 'react-native';
+// @ts-ignore setAndForwardRef type does not exist in @types/react-native
+import setAndForwardRef from 'react-native/Libraries/Utilities/setAndForwardRef';
 
-const AndroidCheckBoxNativeComponent = require('./AndroidCheckBoxNativeComponent');
+import AndroidCheckBoxNativeComponent from './AndroidCheckBoxNativeComponent';
 
-import type {ViewProps} from 'react-native/Libraries/Components/View/ViewPropTypes';
-import type {NativeComponent} from 'react-native/Libraries/Renderer/shims/ReactNative';
-import type {ColorValue} from 'react-native/Libraries/StyleSheet/StyleSheetTypes';
-import type {SyntheticEvent} from 'react-native/Libraries/Types/CoreEventTypes';
-
-type CheckBoxEvent = SyntheticEvent<
-  $ReadOnly<{|
+type CheckBoxEvent = NativeSyntheticEvent<
+  Readonly<{
     target: number,
     value: boolean,
-  |}>,
+    // eslint-disable-next-line prettier/prettier
+  }>
 >;
 
-type CommonProps = $ReadOnly<{|
-  ...ViewProps,
+type CommonProps = Readonly<
+  ViewProps & {
+    /**
+     * Used in case the props change removes the component.
+     */
+    onChange?: (event: CheckBoxEvent) => void,
 
-  /**
-   * Used in case the props change removes the component.
-   */
-  onChange?: ?(event: CheckBoxEvent) => mixed,
+    /**
+     * Invoked with the new value when the value changes.
+     */
+    onValueChange?: (value: boolean) => void,
 
-  /**
-   * Invoked with the new value when the value changes.
-   */
-  onValueChange?: ?(value: boolean) => mixed,
+    /**
+     * Used to locate this view in end-to-end tests.
+     */
+    testID?: string,
+    // eslint-disable-next-line prettier/prettier
+  }
+>;
 
-  /**
-   * Used to locate this view in end-to-end tests.
-   */
-  testID?: ?string,
-|}>;
+type NativeProps = Readonly<
+  CommonProps & {
+    on?: boolean,
+    enabled?: boolean,
+    tintColors: {true?: number, false?: number} | typeof undefined,
+    // eslint-disable-next-line prettier/prettier
+  }
+>;
 
-type NativeProps = $ReadOnly<{|
-  ...CommonProps,
+type CheckBoxNativeType = typeof NativeComponent;
 
-  on?: ?boolean,
-  enabled?: boolean,
-  tintColors: {|true: ?number, false: ?number|} | typeof undefined,
-|}>;
+type Props = Readonly<
+  CommonProps & {
+    /**
+     * The value of the checkbox.  If true the checkbox will be turned on.
+     * Default value is false.
+     */
+    value?: boolean,
 
-type CheckBoxNativeType = Class<NativeComponent<NativeProps>>;
+    /**
+     * If true the user won't be able to toggle the checkbox.
+     * Default value is false.
+     */
+    disabled?: boolean,
 
-type Props = $ReadOnly<{|
-  ...CommonProps,
+    /**
+     * Used to get the ref for the native checkbox
+     */
+    forwardedRef?: React.Ref<CheckBoxNativeType>,
 
-  /**
-   * The value of the checkbox.  If true the checkbox will be turned on.
-   * Default value is false.
-   */
-  value?: ?boolean,
-
-  /**
-   * If true the user won't be able to toggle the checkbox.
-   * Default value is false.
-   */
-  disabled?: ?boolean,
-
-  /**
-   * Used to get the ref for the native checkbox
-   */
-  forwardedRef?: ?React.Ref<CheckBoxNativeType>,
-
-  /**
-   * Controls the colors the checkbox has in checked and unchecked states.
-   */
-  tintColors?: {|true?: ?ColorValue, false?: ?ColorValue|},
-|}>;
+    /**
+     * Controls the colors the checkbox has in checked and unchecked states.
+     */
+    tintColors?: {true?: number, false?: number},
+    // eslint-disable-next-line prettier/prettier
+  }
+>;
 
 /**
  * Renders a boolean input (Android only).
@@ -140,17 +143,20 @@ type Props = $ReadOnly<{|
  * @keyword toggle
  */
 class CheckBox extends React.Component<Props> {
-  _nativeRef: ?React.ElementRef<CheckBoxNativeType> = null;
+  _nativeRef: React.Ref<CheckBoxNativeType> | null = null;
   _setNativeRef = setAndForwardRef({
     getForwardedRef: () => this.props.forwardedRef,
-    setLocalRef: ref => {
+    setLocalRef: (ref: any) => {
       this._nativeRef = ref;
     },
   });
 
   _onChange = (event: CheckBoxEvent) => {
-    const value = this.props.value ?? false;
+    const value = this.props.value || false;
+
+    // @ts-ignore
     nullthrows(this._nativeRef).setNativeProps({value: value});
+
     // Change the props after the native props are set in case the props
     // change removes the component
     this.props.onChange && this.props.onChange(event);
@@ -158,7 +164,7 @@ class CheckBox extends React.Component<Props> {
       this.props.onValueChange(event.nativeEvent.value);
   };
 
-  getTintColors(tintColors) {
+  getTintColors(tintColors: {true?: number, false?: number} | undefined) {
     return tintColors
       ? {
           true: processColor(tintColors.true),
@@ -168,16 +174,9 @@ class CheckBox extends React.Component<Props> {
   }
 
   render() {
-    const {
-      disabled: _,
-      value: __,
-      tintColors,
-      style,
-      forwardedRef,
-      ...props
-    } = this.props;
-    const disabled = this.props.disabled ?? false;
-    const value = this.props.value ?? false;
+    const {tintColors, style, ...props} = this.props;
+    const disabled = this.props.disabled || false;
+    const value = this.props.value || false;
 
     const nativeProps = {
       ...props,
@@ -208,13 +207,13 @@ const styles = StyleSheet.create({
 /**
  * Can't use CheckBoxNativeType because it has different props
  */
-type CheckBoxType = Class<NativeComponent<Props>>;
+type CheckBoxType = typeof NativeComponent;
 
-const CheckBoxWithRef = React.forwardRef(function CheckBoxWithRef(props, ref) {
+const CheckBoxWithRef = React.forwardRef(function CheckBoxWithRef(
+  props: Props,
+  ref: React.Ref<CheckBoxType>,
+) {
   return <CheckBox {...props} forwardedRef={ref} />;
 });
 
-/* $FlowFixMe(>=0.89.0 site=react_native_android_fb) This comment suppresses an
- * error found when Flow v0.89 was deployed. To see the error, delete this
- * comment and run Flow. */
-module.exports = (CheckBoxWithRef: CheckBoxType);
+export default CheckBoxWithRef;
