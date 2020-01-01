@@ -3,6 +3,7 @@
 exports[`<Checkbox /> renders Checkbox with value 1`] = `
 <AndroidCheckBox
   enabled={true}
+  forwardedRef={null}
   on={true}
   onChange={[Function]}
   onResponderTerminationRequest={[Function]}
@@ -16,12 +17,15 @@ exports[`<Checkbox /> renders Checkbox with value 1`] = `
       undefined,
     ]
   }
+  value={true}
 />
 `;
 
 exports[`<Checkbox /> renders disabled Checkbox 1`] = `
 <AndroidCheckBox
+  disabled={true}
   enabled={false}
+  forwardedRef={null}
   on={false}
   onChange={[Function]}
   onResponderTerminationRequest={[Function]}
@@ -41,6 +45,7 @@ exports[`<Checkbox /> renders disabled Checkbox 1`] = `
 exports[`<Checkbox /> renders enabled Checkbox 1`] = `
 <AndroidCheckBox
   enabled={true}
+  forwardedRef={null}
   on={false}
   onChange={[Function]}
   onResponderTerminationRequest={[Function]}
