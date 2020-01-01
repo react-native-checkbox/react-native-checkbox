@@ -69,9 +69,9 @@ aliases:
   name: ESLint Checks
   command: yarn test:eslint
 
-- &flow
-  name: Flow Checks
-  command: yarn test:flow
+- &type-check
+  name: TypeScript Checks
+  command: yarn test:type-check
 
 - &jest
   name: Jest Unit Tests
@@ -103,12 +103,12 @@ jobs:
         at: ~/react-native-checkbox
     - run: *eslint
 
-  flow:
+  type-check:
     <<: *linux_defaults
     steps:
     - attach_workspace:
         at: ~/react-native-checkbox
-    - run: *flow
+    - run: *type-check
   
   jest:
     <<: *linux_defaults
@@ -169,7 +169,7 @@ workflows:
     - eslint:
         requires:
         - linux-checkout
-    - flow:
+    - type-check:
         requires:
         - linux-checkout
     - jest:
