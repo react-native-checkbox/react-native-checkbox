@@ -40,7 +40,8 @@
   "dependencies": {},
   "devDependencies": {
     "@babel/plugin-proposal-class-properties": "^7.4.0",
-    "@react-native-community/eslint-config": "^0.0.5",
+    "@react-native-community/eslint-config": "^0.0.6",
+    "@react-native-community/eslint-plugin": "^1.0.0",
     "@types/jest": "^24.0.25",
     "@types/react-native": "^0.60.27",
     "@types/react-test-renderer": "^16.9.1",
