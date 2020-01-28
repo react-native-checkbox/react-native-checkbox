@@ -1,6 +1,5 @@
+import {NativeModules} from 'react-native';
 
-import { NativeModules } from 'react-native';
-
-const { RNCReactNativeCheckbox } = NativeModules;
+const {RNCReactNativeCheckbox} = NativeModules;
 
 export default RNCReactNativeCheckbox;

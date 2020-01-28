@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Checkbox /> renders Checkbox with value 1`] = `
+<AndroidCheckBox
+  enabled={true}
+  forwardedRef={null}
+  on={true}
+  onChange={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Array [
+      Object {
+        "height": 32,
+        "width": 32,
+      },
+      undefined,
+    ]
+  }
+  value={true}
+/>
+`;
+
+exports[`<Checkbox /> renders disabled Checkbox 1`] = `
+<AndroidCheckBox
+  disabled={true}
+  enabled={false}
+  forwardedRef={null}
+  on={false}
+  onChange={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Array [
+      Object {
+        "height": 32,
+        "width": 32,
+      },
+      undefined,
+    ]
+  }
+/>
+`;
+
+exports[`<Checkbox /> renders enabled Checkbox 1`] = `
+<AndroidCheckBox
+  enabled={true}
+  forwardedRef={null}
+  on={false}
+  onChange={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Array [
+      Object {
+        "height": 32,
+        "width": 32,
+      },
+      undefined,
+    ]
+  }
+/>
+`;
