@@ -8,6 +8,14 @@ React Native component used to select a single value from a range of values.
 
 ![Alt text](screenShots/demo.png)
 
+
+## Support
+
+| RN version     | Checkbox version   |
+| --------     | ---------   |
+| > 0.60     | 0.3   |
+| < 0.60     | 0.2   |
+
 ## Getting started
 
 `yarn add @react-native-community/checkbox`
