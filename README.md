@@ -104,7 +104,7 @@ Check out the [example project](example) for more examples.
 ### Props
 
 
-[View props...](https://facebook.github.io/react-native/docs/view#props)
+[View props...](https://reactnative.dev/docs/view#props)
 
 | Prop name     | Description                                                                                                                                                                                                           |
 | ------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
