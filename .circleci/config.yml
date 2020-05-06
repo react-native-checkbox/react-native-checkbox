@@ -64,6 +64,12 @@ aliases:
   command: |
     yarn install --network-concurrency 1 --non-interactive --cache-folder ~/.cache/yarn & wait
 
+# INSTALL EXAMPLE
+- &yarn-example
+  name: Yarn Install Example
+  command: |
+    cd example && yarn install --network-concurrency 1 --non-interactive --cache-folder ~/.cache/yarn & wait
+
 # ANALYSE
 - &eslint
   name: ESLint Checks
@@ -123,6 +129,7 @@ jobs:
     - attach_workspace:
         at: ~/react-native-checkbox
     - restore-cache: *restore-gradle-cache
+    - run: *yarn-example
     - run:
         name: Accept Android licences
         command: |-
