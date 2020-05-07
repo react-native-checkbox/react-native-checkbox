@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B3E7B58A1CC2AC0600A0062D /* RNCReactNativeCheckbox.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E7B5891CC2AC0600A0062D /* RNCReactNativeCheckbox.m */; };
+		04AB486C2464567600F95015 /* RNCReactNativeCheckboxManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 04AB486B2464567600F95015 /* RNCReactNativeCheckboxManager.m */; };
+		CCA9DE8279A0DD66FD4886D0 /* libPods-RNCReactNativeCheckbox.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B2E96987C4F145B5AE4A100 /* libPods-RNCReactNativeCheckbox.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -23,9 +24,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		04AB486A2464559800F95015 /* RNCReactNativeCheckboxManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RNCReactNativeCheckboxManager.h; sourceTree = "<group>"; };
+		04AB486B2464567600F95015 /* RNCReactNativeCheckboxManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RNCReactNativeCheckboxManager.m; sourceTree = "<group>"; };
 		134814201AA4EA6300B7C361 /* libRNCReactNativeCheckbox.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRNCReactNativeCheckbox.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		B3E7B5881CC2AC0600A0062D /* RNCReactNativeCheckbox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNCReactNativeCheckbox.h; sourceTree = "<group>"; };
-		B3E7B5891CC2AC0600A0062D /* RNCReactNativeCheckbox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNCReactNativeCheckbox.m; sourceTree = "<group>"; };
+		4B2E96987C4F145B5AE4A100 /* libPods-RNCReactNativeCheckbox.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RNCReactNativeCheckbox.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A03BB988CC7414D736B91E6 /* Pods-RNCReactNativeCheckbox.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNCReactNativeCheckbox.release.xcconfig"; path = "Target Support Files/Pods-RNCReactNativeCheckbox/Pods-RNCReactNativeCheckbox.release.xcconfig"; sourceTree = "<group>"; };
+		9BD42D4DAF49745FFCBF1194 /* Pods-RNCReactNativeCheckbox.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNCReactNativeCheckbox.debug.xcconfig"; path = "Target Support Files/Pods-RNCReactNativeCheckbox/Pods-RNCReactNativeCheckbox.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CCA9DE8279A0DD66FD4886D0 /* libPods-RNCReactNativeCheckbox.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -50,10 +55,29 @@
 		58B511D21A9E6C8500147676 = {
 			isa = PBXGroup;
 			children = (
-				B3E7B5881CC2AC0600A0062D /* RNCReactNativeCheckbox.h */,
-				B3E7B5891CC2AC0600A0062D /* RNCReactNativeCheckbox.m */,
+				04AB486A2464559800F95015 /* RNCReactNativeCheckboxManager.h */,
+				04AB486B2464567600F95015 /* RNCReactNativeCheckboxManager.m */,
 				134814211AA4EA7D00B7C361 /* Products */,
+				8181DC7905A1A52AA25CCEB0 /* Pods */,
+				A4CB0919B25531C83A6A0790 /* Frameworks */,
 			);
+			sourceTree = "<group>";
+		};
+		8181DC7905A1A52AA25CCEB0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9BD42D4DAF49745FFCBF1194 /* Pods-RNCReactNativeCheckbox.debug.xcconfig */,
+				8A03BB988CC7414D736B91E6 /* Pods-RNCReactNativeCheckbox.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		A4CB0919B25531C83A6A0790 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4B2E96987C4F145B5AE4A100 /* libPods-RNCReactNativeCheckbox.a */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -63,6 +87,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 58B511EF1A9E6C8500147676 /* Build configuration list for PBXNativeTarget "RNCReactNativeCheckbox" */;
 			buildPhases = (
+				F3A67330767D0695FB222E32 /* [CP] Check Pods Manifest.lock */,
 				58B511D71A9E6C8500147676 /* Sources */,
 				58B511D81A9E6C8500147676 /* Frameworks */,
 				58B511D91A9E6C8500147676 /* CopyFiles */,
@@ -95,6 +120,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 			);
 			mainGroup = 58B511D21A9E6C8500147676;
@@ -107,12 +133,37 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		F3A67330767D0695FB222E32 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RNCReactNativeCheckbox-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		58B511D71A9E6C8500147676 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B3E7B58A1CC2AC0600A0062D /* RNCReactNativeCheckbox.m in Sources */,
+				04AB486C2464567600F95015 /* RNCReactNativeCheckboxManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -202,9 +253,10 @@
 		};
 		58B511F01A9E6C8500147676 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9BD42D4DAF49745FFCBF1194 /* Pods-RNCReactNativeCheckbox.debug.xcconfig */;
 			buildSettings = {
 				HEADER_SEARCH_PATHS = (
-				"$(inherited)",
+					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(SRCROOT)/../../../React/**",
 					"$(SRCROOT)/../../react-native/React/**",
@@ -218,6 +270,7 @@
 		};
 		58B511F11A9E6C8500147676 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8A03BB988CC7414D736B91E6 /* Pods-RNCReactNativeCheckbox.release.xcconfig */;
 			buildSettings = {
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",

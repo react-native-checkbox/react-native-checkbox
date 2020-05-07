@@ -1,0 +1,3 @@
+target 'RNCReactNativeCheckbox' do
+  pod 'BEMCheckBox', '~> 1.4'
+end
