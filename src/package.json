@@ -1,0 +1,104 @@
+{
+  "name": "@react-native-community/checkbox",
+  "version": "0.3.0",
+  "description": "React Native Checkbox native modules for Android",
+  "keywords": [
+    "checkbox",
+    "react native",
+    "react-native"
+  ],
+  "homepage": "https://github.com/react-native-community/react-native-checkbox#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/react-native-community/react-native-checkbox.git"
+  },
+  "license": "MIT",
+  "author": "Nicholas Lee <nicholaslee119@gmail.com>",
+  "main": "dist/CheckBox",
+  "types": "dist/CheckBox.d.ts",
+  "scripts": {
+    "prepare": "yarn build",
+    "build": "tsc",
+    "ci:test:type-check": "yarn test:type-check",
+    "ci:test:js": "yarn test:js",
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "test": "yarn test:eslint && yarn test:type-check && yarn test:jest",
+    "test:eslint": "eslint 'js/**/*.ts' 'js/**/*.tsx' 'example/**/*.js'",
+    "test:type-check": "tsc --noEmit",
+    "test:js": "jest",
+    "test:detox:ios:build:debug": "detox build -c ios.sim.debug",
+    "test:detox:ios:test:debug": "detox test -c ios.sim.debug"
+  },
+  "prettier": {
+    "bracketSpacing": false,
+    "jsxBracketSameLine": true,
+    "parser": "flow",
+    "singleQuote": true,
+    "trailingComma": "all"
+  },
+  "jest": {
+    "preset": "react-native",
+    "testPathIgnorePatterns":["node_modules","example"]
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.4.0",
+    "@react-native-community/eslint-config": "^0.0.6",
+    "@react-native-community/eslint-plugin": "^1.0.0",
+    "@types/jest": "^24.0.25",
+    "@types/react-native": "^0.60.27",
+    "@types/react-test-renderer": "^16.9.1",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-plugin-module-resolver": "^3.1.3",
+    "detox": "^16.4.1",
+    "eslint": "^6.8.0",
+    "eslint-plugin-prettier": "^3.1.2",
+    "flow-bin": "^0.86.0",
+    "jest": "^24.7.1",
+    "metro-react-native-babel-preset": "0.51.1",
+    "prettier": "1.19.1",
+    "react": "16.9.0",
+    "react-native": "0.61.2",
+    "react-test-renderer": "^16.8.6",
+    "ts-jest": "^24.2.0",
+    "typescript": "^3.7.4",
+    "xcpretty": "^0.2.8001"
+  },
+  "peerDependencies": {
+    "react": "*",
+    "react-native": "*"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "detox": {
+    "test-runner": "jest",
+    "runner-config": "example/e2e/config.json",
+    "configurations": {
+      "ios.sim.debug": {
+        "binaryPath": "example/ios/build/Build/Products/Debug-iphonesimulator/example.app",
+        "build": "export RCT_NO_LAUNCH_PACKAGER=true && xcodebuild -project example/ios/example.xcodeproj -destination 'platform=iOS Simulator,name=iPhone 11' -scheme example -parallelizeTargets -configuration Debug -derivedDataPath example/ios/build  -UseModernBuildSystem=YES",
+        "type": "ios.simulator",
+        "name": "iPhone 11"
+      },
+      "ios.sim.release": {
+        "binaryPath": "example/ios/build/Build/Products/Release-iphonesimulator/example.app",
+        "build": "export RCT_NO_LAUNCH_PACKAGER=true && xcodebuild -project example/ios/example.xcodeproj -destination 'platform=iOS Simulator,name=iPhone 11' -scheme example -parallelizeTargets -configuration Release -derivedDataPath example/ios/build  -UseModernBuildSystem=YES",
+        "type": "ios.simulator",
+        "name": "iPhone 11"
+      },
+      "android.emu.debug": {
+        "binaryPath": "example/android/app/build/outputs/apk/debug/app-debug.apk",
+        "build": "export RCT_NO_LAUNCH_PACKAGER=true && pushd example/android && ./gradlew assembleDebug assembleAndroidTest -DtestBuildType=debug && popd",
+        "type": "android.emulator",
+        "name": "TestingAVD"
+      },
+      "android.emu.release": {
+        "binaryPath": "example/android/app/build/outputs/apk/release/app-release.apk",
+        "build": "export RCT_NO_LAUNCH_PACKAGER=true && pushd example/android && ./gradlew assembleRelease assembleAndroidTest -DtestBuildType=release && popd",
+        "type": "android.emulator",
+        "name": "TestingAVD"
+      }
+    }
+  }
+}
