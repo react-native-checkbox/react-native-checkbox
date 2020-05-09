@@ -13,9 +13,6 @@
 #import <React/UIView+React.h>
 #import <React/RCTConvert.h>
 
-@interface RNCCheckboxManager() <BEMCheckBoxDelegate>
-@end
-
 @implementation RNCCheckboxManager
 
 RCT_EXPORT_MODULE();
@@ -31,6 +28,8 @@ RCT_EXPORT_VIEW_PROPERTY(onCheckColor, UIColor);
 RCT_EXPORT_VIEW_PROPERTY(onFillColor, UIColor);
 RCT_EXPORT_VIEW_PROPERTY(onTintColor, UIColor);
 RCT_EXPORT_VIEW_PROPERTY(animationDuration, CGFloat);
+RCT_EXPORT_VIEW_PROPERTY(onAnimationDidStop, RCTBubblingEventBlock)
+RCT_EXPORT_VIEW_PROPERTY(onValueChange, RCTBubblingEventBlock)
 
 RCT_REMAP_VIEW_PROPERTY(boxType, boxType, BEMBoxType);
 RCT_REMAP_VIEW_PROPERTY(onAnimationType, onAnimationType, BEMAnimationType);
@@ -43,23 +42,22 @@ RCT_REMAP_VIEW_PROPERTY(offAnimationType, offAnimationType, BEMAnimationType);
     return checkbox;
 }
 
-- (void)didTap:(RNCCheckbox *) checkbox {
-    NSDictionary *event = @{
-        @"target": checkbox.reactTag,
+- (void)didTapCheckBox:(RNCCheckbox *) checkbox {
+    if (!checkbox.onValueChange) {
+      return;
+    }
+    checkbox.onValueChange(@{
         @"value": @(checkbox.on),
-        @"name": @"tap",
-    };
-    
-    checkbox.onDidTap(event);
+    });
 }
 
-- (void)animationDidStop:(RNCCheckbox *)checkbox {
-    NSDictionary *event = @{
-        @"target": checkbox.reactTag,
+- (void)animationDidStopForCheckBox:(RNCCheckbox *) checkbox {
+    if (!checkbox.onAnimationDidStop) {
+      return;
+    }
+    checkbox.onAnimationDidStop(@{
         @"value": @(checkbox.on),
-        @"name": @"animation",
-    };
-    checkbox.onAnimationDidStop(event);
+    });
 }
 
 @end
