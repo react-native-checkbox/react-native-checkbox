@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		04AB486C2464567600F95015 /* RNCCheckboxManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 04AB486B2464567600F95015 /* RNCCheckboxManager.m */; };
+		04D89B062466BC8600F12FAC /* RNCCheckbox.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D89B052466BC8600F12FAC /* RNCCheckbox.m */; };
 		D42212A44A2EA7735AC18A04 /* libPods-RNCCheckbox.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B20689F31656ED47BFF7B01D /* libPods-RNCCheckbox.a */; };
 /* End PBXBuildFile section */
 
@@ -26,6 +27,8 @@
 /* Begin PBXFileReference section */
 		04AB486A2464559800F95015 /* RNCCheckboxManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RNCCheckboxManager.h; sourceTree = "<group>"; };
 		04AB486B2464567600F95015 /* RNCCheckboxManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RNCCheckboxManager.m; sourceTree = "<group>"; };
+		04D89B042466BC6300F12FAC /* RNCCheckbox.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RNCCheckbox.h; sourceTree = "<group>"; };
+		04D89B052466BC8600F12FAC /* RNCCheckbox.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RNCCheckbox.m; sourceTree = "<group>"; };
 		134814201AA4EA6300B7C361 /* libRNCCheckbox.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRNCCheckbox.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		33AC04FB2B2595F34A4FC607 /* Pods-RNCCheckbox.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNCCheckbox.release.xcconfig"; path = "Target Support Files/Pods-RNCCheckbox/Pods-RNCCheckbox.release.xcconfig"; sourceTree = "<group>"; };
 		350E98BE3B7F42A33CF16B1C /* Pods-RNCCheckbox.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNCCheckbox.debug.xcconfig"; path = "Target Support Files/Pods-RNCCheckbox/Pods-RNCCheckbox.debug.xcconfig"; sourceTree = "<group>"; };
@@ -58,6 +61,8 @@
 			isa = PBXGroup;
 			children = (
 				04AB486A2464559800F95015 /* RNCCheckboxManager.h */,
+				04D89B042466BC6300F12FAC /* RNCCheckbox.h */,
+				04D89B052466BC8600F12FAC /* RNCCheckbox.m */,
 				04AB486B2464567600F95015 /* RNCCheckboxManager.m */,
 				134814211AA4EA7D00B7C361 /* Products */,
 				8181DC7905A1A52AA25CCEB0 /* Pods */,
@@ -167,6 +172,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04D89B062466BC8600F12FAC /* RNCCheckbox.m in Sources */,
 				04AB486C2464567600F95015 /* RNCCheckboxManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
