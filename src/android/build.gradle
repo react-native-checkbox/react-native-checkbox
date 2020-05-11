@@ -12,19 +12,21 @@ buildscript {
 
 apply plugin: 'com.android.library'
 
-def safeExtGet(prop, fallback) {
-    rootProject.ext.has(prop) ? rootProject.ext.get(prop) : fallback
+def getExtOrDefault(name) {
+    return rootProject.ext.has(name) ? rootProject.ext.get(name) : project.properties['ReactNativeCheckBox_' + name]
+}
+
+def getExtOrIntegerDefault(name) {
+    return rootProject.ext.has(name) ? rootProject.ext.get(name) : (project.properties['ReactNativeCheckBox_' + name]).toInteger()
 }
 
 android {
-    compileSdkVersion safeExtGet("compileSdkVersion", 28)
-    buildToolsVersion safeExtGet("buildToolsVersion", "28.0.3")
+    compileSdkVersion getExtOrIntegerDefault('compileSdkVersion')
+    buildToolsVersion getExtOrDefault('buildToolsVersion')
 
     defaultConfig {
-        minSdkVersion safeExtGet("minSdkVersion", 16)
-        targetSdkVersion safeExtGet("targetSdkVersion", 28)
-        versionCode 1
-        versionName "1.0"
+        minSdkVersion getExtOrIntegerDefault('minSdkVersion')
+        targetSdkVersion getExtOrIntegerDefault('targetSdkVersion')
     }
 
     lintOptions {
@@ -33,6 +35,8 @@ android {
 }
 
 repositories {
+    google()
+    jcenter()
     mavenCentral()
 }
 
