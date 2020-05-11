@@ -9,10 +9,10 @@
  */
 'use strict';
 
+import nullthrows from 'nullthrows';
 import React from 'react';
 import {
   StyleSheet,
-  processColor,
   ViewProps,
   NativeComponent,
   NativeSyntheticEvent,
@@ -26,7 +26,6 @@ type CheckBoxEvent = NativeSyntheticEvent<
     target: number,
     value: boolean,
     name: 'animation' | 'tap',
-    // eslint-disable-next-line prettier/prettier
   }>
 >;
 
@@ -46,7 +45,6 @@ type CommonProps = Readonly<
      * Used to locate this view in end-to-end tests.
      */
     testID?: string,
-    // eslint-disable-next-line prettier/prettier
   }
 >;
 
@@ -74,12 +72,6 @@ type Props = Readonly<
      */
     forwardedRef?: React.Ref<CheckBoxNativeType>,
 
-    /**
-     * Controls the colors the checkbox has in checked and unchecked states.
-     */
-    tintColors?: {true?: number, false?: number},
-    // eslint-disable-next-line prettier/prettier
-
     lineWidth?: number,
     hideBox?: boolean,
     boxType?: BoxType
@@ -90,11 +82,10 @@ type Props = Readonly<
     animationDuration?: number,
     onAnimationType?: AnimationType,
     offAnimationType?: AnimationType,
-    onAnimationEnd?: Function,
   }
 >;
 
-export default class CheckBox extends React.Component<Props> {
+class CheckBox extends React.Component<Props> {
 
   _nativeRef: React.Ref<CheckBoxNativeType> | null = null;
   _setNativeRef = setAndForwardRef({
@@ -107,64 +98,45 @@ export default class CheckBox extends React.Component<Props> {
   _onChange = (event: CheckBoxEvent) => {
     const {
       onValueChange,
-      onAnimationEnd,
-      value: propValue,
-      onChange,
     } = this.props;
 
-    const { name, value: nativeValue } = event.nativeEvent;
-
+    const { value } = event.nativeEvent;
     // @ts-ignore
-    nullthrows(this._nativeRef).setNativeProps({value: propValue});
-
-    // Change the props after the native props are set in case the props
-    // change removes the component
-    onChange && onChange(event);
-    onValueChange && onValueChange(nativeValue);
-    if (name === 'animation' && onAnimationEnd) {
-      onAnimationEnd(propValue);
-    }
+    nullthrows(this._nativeRef).setNativeProps({value});
+    onValueChange && onValueChange(value);
   };
 
-  getTintColors(tintColors: {true?: number, false?: number} | undefined) {
-    return tintColors
-      ? {
-          true: processColor(tintColors.true),
-          false: processColor(tintColors.false),
-        }
-      : undefined;
-  }
-
   render() {
-    const {tintColors, style, ...props} = this.props;
-    const disabled = this.props.disabled || false;
-    const value = this.props.value || false;
-
-    const nativeProps = {
-      ...props,
-      onStartShouldSetResponder: () => true,
-      onResponderTerminationRequest: () => false,
-      enabled: !disabled,
-      on: value,
-      tintColors: this.getTintColors(tintColors),
-      style: [styles.rctCheckBox, style],
-    };
-
-
+    const {style, onValueChange, ...props} = this.props;
     return (
       <IOSCheckBoxNativeComponent
-        {...nativeProps}
+        {...props}
+        style={[styles.rctCheckBox, style]}
         ref={this._setNativeRef}
-        onChange={this._onChange}
+        onValueChange={this._onChange}
       />
-    );
+    )
   }
 }
 
 const styles = StyleSheet.create({
   rctCheckBox: {
-    height: 50,
-    width: 50,
+    height: 32,
+    width: 32,
     backgroundColor: 'transparent',
   },
 });
+
+/**
+ * Can't use CheckBoxNativeType because it has different props
+ */
+type CheckBoxType = typeof NativeComponent;
+
+const CheckBoxWithRef = React.forwardRef(function CheckBoxWithRef(
+  props: Props,
+  ref: React.Ref<CheckBoxType>,
+) {
+  return <CheckBox {...props} forwardedRef={ref} />;
+});
+
+export default CheckBoxWithRef;
