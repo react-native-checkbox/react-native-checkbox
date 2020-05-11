@@ -47,7 +47,9 @@ RCT_REMAP_VIEW_PROPERTY(offAnimationType, offAnimationType, BEMAnimationType);
       return;
     }
     checkbox.onValueChange(@{
+        @"target": checkbox.reactTag,
         @"value": @(checkbox.on),
+        @"name": @"tap",
     });
 }
 
@@ -56,7 +58,9 @@ RCT_REMAP_VIEW_PROPERTY(offAnimationType, offAnimationType, BEMAnimationType);
       return;
     }
     checkbox.onAnimationDidStop(@{
+        @"target": checkbox.reactTag,
         @"value": @(checkbox.on),
+        @"name": @"animation",
     });
 }
 
