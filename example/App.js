@@ -2,7 +2,6 @@
  * Sample React Native App
  * https://github.com/facebook/react-native
  *
- * @format
  * @lint-ignore-every XPLATJSCOPYRIGHT1
  */
 
@@ -43,13 +42,30 @@ export default class App extends Component<Props, State> {
     };
   }
 
-  render() {
+  renderForIOS() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>Welcome to React Native Checkbox!</Text>
-        <CheckBox disabled={true} />
-        <CheckBox value={false} hideBox={true} />
-        <CheckBox boxType={'square'} />
+        <Text>{`[value: ${this.state.value4}]`}</Text>
+        <CheckBox
+          value={this.state.value4}
+          hideBox={true}
+          onValueChange={value =>
+            this.setState({
+              value4: value,
+            })
+          }
+        />
+        <Text>{`[value: ${this.state.value3}]`}</Text>
+        <CheckBox
+          value={this.state.value3}
+          boxType={'square'}
+          onValueChange={value =>
+            this.setState({
+              value3: value,
+            })
+          }
+        />
+        <Text>{`[value: ${this.state.value2}]`}</Text>
         <CheckBox
           value={this.state.value2}
           onValueChange={value =>
@@ -70,7 +86,41 @@ export default class App extends Component<Props, State> {
           onAnimationType={'bounce'}
           offAnimationType={'stroke'}
         />
-        <Text>{`value is: ${this.state.value2}`}</Text>
+      </View>
+    );
+  }
+
+  renderForAndroid() {
+    return (
+      <View style={styles.container}>
+        <Text>{`[value: ${this.state.value0}]`}</Text>
+        <CheckBox
+          disabled={true}
+          value={this.state.value0}
+          onValueChange={value =>
+            this.setState({
+              value0: value,
+            })
+          }
+        />
+        <Text>{`[value: ${this.state.value1}]`}</Text>
+        <CheckBox
+          value={this.state.value1}
+          onValueChange={value =>
+            this.setState({
+              value1: value,
+            })
+          }
+        />
+      </View>
+    );
+  }
+
+  render() {
+    return (
+      <View style={styles.container}>
+        <Text style={styles.welcome}>Welcome to React Native Checkbox!</Text>
+        {isIOS ? this.renderForIOS() : this.renderForAndroid()}
         <Text style={styles.instructions}>{instructions}</Text>
       </View>
     );
