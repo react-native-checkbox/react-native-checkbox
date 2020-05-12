@@ -31,29 +31,29 @@ example/
 screenShots/
 
 # Android
-src/android/*/build/
-src/android/gradlew
-src/android/build
-src/android/gradlew.bat
-src/android/gradle/
-src/android/com_crashlytics_export_strings.xml
-src/android/local.properties
-src/android/.gradle/
-src/android/.signing/
-src/android/.idea/gradle.xml
-src/android/.idea/libraries/
-src/android/.idea/workspace.xml
-src/android/.idea/tasks.xml
-src/android/.idea/.name
-src/android/.idea/compiler.xml
-src/android/.idea/copyright/profiles_settings.xml
-src/android/.idea/encodings.xml
-src/android/.idea/misc.xml
-src/android/.idea/modules.xml
-src/android/.idea/scopes/scope_settings.xml
-src/android/.idea/vcs.xml
-src/android/*.iml
-src/android/.settings
+android/*/build/
+android/gradlew
+android/build
+android/gradlew.bat
+android/gradle/
+android/com_crashlytics_export_strings.xml
+android/local.properties
+android/.gradle/
+android/.signing/
+android/.idea/gradle.xml
+android/.idea/libraries/
+android/.idea/workspace.xml
+android/.idea/tasks.xml
+android/.idea/.name
+android/.idea/compiler.xml
+android/.idea/copyright/profiles_settings.xml
+android/.idea/encodings.xml
+android/.idea/misc.xml
+android/.idea/modules.xml
+android/.idea/scopes/scope_settings.xml
+android/.idea/vcs.xml
+android/*.iml
+android/.settings
 
 # iOS
 ios/*.xcodeproj/xcuserdata
