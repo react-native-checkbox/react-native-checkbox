@@ -131,8 +131,8 @@ jobs:
     - run:
         name: Build Android Example App and Library
         command: |-
-          cd example
-          yarn android
+          cd example/android
+          ./gradlew clean assembleDebug
     - save-cache: *save-gradle-cache
 
   ios-compile:
