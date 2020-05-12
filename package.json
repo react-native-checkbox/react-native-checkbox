@@ -3,7 +3,8 @@
   "workspaces": [ "src", "example" ],
   "scripts": {
     "test": "yarn test:jest && yarn test:src",
-    "test:src": "cd src && yarn test",
+    "test:eslint": "eslint 'src/js/**/*.ts' 'src/js/**/*.tsx'",
+    "test:type-check": "tsc --noEmit",
     "test:jest": "jest src",
     "test:detox:android:test:debug": "detox test -c android.emu.debug",
     "test:detox:android:test:release": "detox test -c android.emu.release",

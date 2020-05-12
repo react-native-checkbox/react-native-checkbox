@@ -17,10 +17,7 @@
   "main": "dist/CheckBox",
   "types": "dist/CheckBox.d.ts",
   "scripts": {
-    "build": "tsc",
-    "test": "yarn test:eslint && yarn test:type-check",
-    "test:eslint": "eslint 'js/**/*.ts' 'js/**/*.tsx'",
-    "test:type-check": "tsc --noEmit"
+    "build": "tsc"
   },
   "devDependencies": {
     "@babel/core": "^7.8.3",
