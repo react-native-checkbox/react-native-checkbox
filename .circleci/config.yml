@@ -81,7 +81,7 @@ aliases:
 
 - &jest
   name: Jest Unit Tests
-  command: cd src && yarn test:js
+  command: yarn test:jest
 
 # -------------------------
 #          JOBS
