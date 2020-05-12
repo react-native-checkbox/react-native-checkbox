@@ -10,7 +10,7 @@ defaults: &defaults
 linux_defaults: &linux_defaults
   <<: *defaults
   docker:
-  - image: circleci/node:8
+  - image: circleci/node:chakracore-10.13.0
   environment:
   - PATH: "/opt/yarn/yarn-v1.5.1/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
 
@@ -65,13 +65,9 @@ aliases:
     yarn install --network-concurrency 1 --non-interactive --cache-folder ~/.cache/yarn & wait
 
 # ANALYSE
-- &eslint
-  name: ESLint Checks
-  command: cd src && yarn test:eslint
-
-- &type-check
-  name: TypeScript Checks
-  command: cd src && yarn test:type-check
+- &lint
+  name: ESLint Checks & TypeScript Checks
+  command: yarn test:src
 
 - &jest
   name: Jest Unit Tests
@@ -102,13 +98,6 @@ jobs:
     - attach_workspace:
         at: ~/react-native-checkbox
     - run: *eslint
-
-  type-check:
-    <<: *linux_defaults
-    steps:
-    - attach_workspace:
-        at: ~/react-native-checkbox
-    - run: *type-check
   
   jest:
     <<: *linux_defaults
@@ -167,9 +156,6 @@ workflows:
     jobs:
     - linux-checkout
     - eslint:
-        requires:
-        - linux-checkout
-    - type-check:
         requires:
         - linux-checkout
     - jest:
