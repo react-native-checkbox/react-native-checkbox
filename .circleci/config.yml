@@ -84,7 +84,7 @@ jobs:
     steps:
     - checkout
     - restore-cache: *restore-yarn-cache
-    - run: rm -rf node_modules
+    - run: rm -rf node_modules && rm -rf src/node_modules && -rf example/node_modules
     - run: yarn cache clean
     - run: *yarn
     - save-cache: *save-yarn-cache
