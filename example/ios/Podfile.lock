@@ -248,7 +248,7 @@ DEPENDENCIES:
   - React-RCTVibration (from `../../node_modules/react-native/Libraries/Vibration`)
   - ReactCommon/jscallinvoker (from `../../node_modules/react-native/ReactCommon`)
   - ReactCommon/turbomodule/core (from `../../node_modules/react-native/ReactCommon`)
-  - RNCCheckbox (from `../../src`)
+  - "RNCCheckbox (from `../node_modules/@react-native-community/checkbox`)"
   - Yoga (from `../../node_modules/react-native/ReactCommon/yoga`)
 
 SPEC REPOS:
@@ -305,7 +305,7 @@ EXTERNAL SOURCES:
   ReactCommon:
     :path: "../../node_modules/react-native/ReactCommon"
   RNCCheckbox:
-    :path: "../../src"
+    :path: "../node_modules/@react-native-community/checkbox"
   Yoga:
     :path: "../../node_modules/react-native/ReactCommon/yoga"
 
@@ -338,6 +338,6 @@ SPEC CHECKSUMS:
   RNCCheckbox: 6bd709234448f64020bfef152155914fffec0ebb
   Yoga: 14927e37bd25376d216b150ab2a561773d57911f
 
-PODFILE CHECKSUM: fc799fe4eb8f587e0f77ceac21befa83dfbada6e
+PODFILE CHECKSUM: c57ebc9c17572d007c20bb8d19901226d73a2699
 
 COCOAPODS: 1.9.1
