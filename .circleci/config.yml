@@ -65,7 +65,7 @@ aliases:
     yarn install --network-concurrency 1 --non-interactive --cache-folder ~/.cache/yarn & wait
 
 # ANALYSE
-- &lint
+- &checks
   name: ESLint Checks & TypeScript Checks
   command: yarn test:src
 
@@ -92,12 +92,12 @@ jobs:
         root: .
         paths: .
 
-  eslint:
+  checks:
     <<: *linux_defaults
     steps:
     - attach_workspace:
         at: ~/react-native-checkbox
-    - run: *eslint
+    - run: *checks
   
   jest:
     <<: *linux_defaults
@@ -155,7 +155,7 @@ workflows:
   Test:
     jobs:
     - linux-checkout
-    - eslint:
+    - checks:
         requires:
         - linux-checkout
     - jest:
