@@ -10,7 +10,7 @@
   "prettier": {
     "bracketSpacing": false,
     "jsxBracketSameLine": true,
-    "parser": "flow",
+    "parser": "typescript",
     "singleQuote": true,
     "trailingComma": "all"
   },

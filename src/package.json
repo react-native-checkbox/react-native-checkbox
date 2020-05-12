@@ -19,20 +19,17 @@
   "scripts": {
     "prepare": "yarn build",
     "build": "tsc",
-    "ci:test:type-check": "yarn test:type-check",
-    "ci:test:js": "yarn test:js",
     "start": "node node_modules/react-native/local-cli/cli.js start",
-    "test": "yarn test:eslint && yarn test:type-check && yarn test:jest",
-    "test:eslint": "eslint 'js/**/*.ts' 'js/**/*.tsx' 'example/**/*.js'",
+    "test": "yarn test:eslint && yarn test:type-check",
+    "test:eslint": "eslint 'js/**/*.ts' 'js/**/*.tsx'",
     "test:type-check": "tsc --noEmit",
-    "test:js": "jest",
     "test:detox:ios:build:debug": "detox build -c ios.sim.debug",
     "test:detox:ios:test:debug": "detox test -c ios.sim.debug"
   },
   "prettier": {
     "bracketSpacing": false,
     "jsxBracketSameLine": true,
-    "parser": "flow",
+    "parser": "typescript",
     "singleQuote": true,
     "trailingComma": "all"
   },
@@ -43,30 +40,30 @@
   "dependencies": {},
   "devDependencies": {
     "@babel/plugin-proposal-class-properties": "^7.4.0",
-    "@react-native-community/eslint-config": "^0.0.6",
+    "@react-native-community/eslint-config": "^1.1.0",
     "@react-native-community/eslint-plugin": "^1.0.0",
     "@types/jest": "^24.0.25",
     "@types/react-native": "^0.60.27",
-    "@types/react-test-renderer": "^16.9.1",
-    "babel-core": "^7.0.0-bridge.0",
+    "@types/react-test-renderer": "16.9.0",
+    "@babel/core": "^7.8.3",
     "babel-plugin-module-resolver": "^3.1.3",
     "detox": "^16.4.1",
     "eslint": "^6.8.0",
     "eslint-plugin-prettier": "^3.1.2",
     "flow-bin": "^0.86.0",
     "jest": "^24.7.1",
-    "metro-react-native-babel-preset": "0.51.1",
-    "prettier": "1.19.1",
+    "metro-react-native-babel-preset": "0.59.0",
+    "prettier": "^2.0.5",
     "react": "16.9.0",
     "react-native": "0.61.2",
-    "react-test-renderer": "^16.8.6",
+    "react-test-renderer": "16.9.0",
     "ts-jest": "^24.2.0",
-    "typescript": "^3.7.4",
+    "typescript": "^3.8.3",
     "xcpretty": "^0.2.8001"
   },
   "peerDependencies": {
     "react": "*",
-    "react-native": "*"
+    "react-native": ">= 0.60"
   },
   "publishConfig": {
     "access": "public"
