@@ -24,12 +24,6 @@ jsconfig.json
 .eslintignore
 codecov.yml
 
-# Example
-example/
-
-#ScreenShots
-screenShots/
-
 # Android
 android/*/build/
 android/gradlew
@@ -40,18 +34,7 @@ android/com_crashlytics_export_strings.xml
 android/local.properties
 android/.gradle/
 android/.signing/
-android/.idea/gradle.xml
-android/.idea/libraries/
-android/.idea/workspace.xml
-android/.idea/tasks.xml
-android/.idea/.name
-android/.idea/compiler.xml
-android/.idea/copyright/profiles_settings.xml
-android/.idea/encodings.xml
-android/.idea/misc.xml
-android/.idea/modules.xml
-android/.idea/scopes/scope_settings.xml
-android/.idea/vcs.xml
+android/.idea
 android/*.iml
 android/.settings
 
