@@ -23,9 +23,8 @@ import AndroidCheckBoxNativeComponent from './AndroidCheckBoxNativeComponent';
 
 type CheckBoxEvent = NativeSyntheticEvent<
   Readonly<{
-    target: number,
-    value: boolean,
-    // eslint-disable-next-line prettier/prettier
+    target: number;
+    value: boolean;
   }>
 >;
 
@@ -34,27 +33,25 @@ type CommonProps = Readonly<
     /**
      * Used in case the props change removes the component.
      */
-    onChange?: (event: CheckBoxEvent) => void,
+    onChange?: (event: CheckBoxEvent) => void;
 
     /**
      * Invoked with the new value when the value changes.
      */
-    onValueChange?: (value: boolean) => void,
+    onValueChange?: (value: boolean) => void;
 
     /**
      * Used to locate this view in end-to-end tests.
      */
-    testID?: string,
-    // eslint-disable-next-line prettier/prettier
+    testID?: string;
   }
 >;
 
 type NativeProps = Readonly<
   CommonProps & {
-    on?: boolean,
-    enabled?: boolean,
-    tintColors: {true?: number, false?: number} | typeof undefined,
-    // eslint-disable-next-line prettier/prettier
+    on?: boolean;
+    enabled?: boolean;
+    tintColors: {true?: number; false?: number} | typeof undefined;
   }
 >;
 
@@ -66,24 +63,23 @@ type Props = Readonly<
      * The value of the checkbox.  If true the checkbox will be turned on.
      * Default value is false.
      */
-    value?: boolean,
+    value?: boolean;
 
     /**
      * If true the user won't be able to toggle the checkbox.
      * Default value is false.
      */
-    disabled?: boolean,
+    disabled?: boolean;
 
     /**
      * Used to get the ref for the native checkbox
      */
-    forwardedRef?: React.Ref<CheckBoxNativeType>,
+    forwardedRef?: React.Ref<CheckBoxNativeType>;
 
     /**
      * Controls the colors the checkbox has in checked and unchecked states.
      */
-    tintColors?: {true?: number, false?: number},
-    // eslint-disable-next-line prettier/prettier
+    tintColors?: {true?: number; false?: number};
   }
 >;
 
@@ -164,7 +160,7 @@ class CheckBox extends React.Component<Props> {
       this.props.onValueChange(event.nativeEvent.value);
   };
 
-  getTintColors(tintColors: {true?: number, false?: number} | undefined) {
+  getTintColors(tintColors: {true?: number; false?: number} | undefined) {
     return tintColors
       ? {
           true: processColor(tintColors.true),

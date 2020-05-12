@@ -23,9 +23,9 @@ import setAndForwardRef from 'react-native/Libraries/Utilities/setAndForwardRef'
 
 type CheckBoxEvent = NativeSyntheticEvent<
   Readonly<{
-    target: number,
-    value: boolean,
-    name: 'animation' | 'tap',
+    target: number;
+    value: boolean;
+    name: 'animation' | 'tap';
   }>
 >;
 
@@ -34,24 +34,30 @@ type CommonProps = Readonly<
     /**
      * Used in case the props change removes the component.
      */
-    onChange?: (event: CheckBoxEvent) => void,
+    onChange?: (event: CheckBoxEvent) => void;
 
     /**
      * Invoked with the new value when the value changes.
      */
-    onValueChange?: (value: boolean) => void,
+    onValueChange?: (value: boolean) => void;
 
     /**
      * Used to locate this view in end-to-end tests.
      */
-    testID?: string,
+    testID?: string;
   }
 >;
 
 type CheckBoxNativeType = typeof NativeComponent;
 
-type BoxType = 'circle' | 'square'
-type AnimationType = 'stroke' | 'fill' | 'bounce' | 'flat' | 'one-stroke' | 'fade'
+type BoxType = 'circle' | 'square';
+type AnimationType =
+  | 'stroke'
+  | 'fill'
+  | 'bounce'
+  | 'flat'
+  | 'one-stroke'
+  | 'fade';
 
 type Props = Readonly<
   CommonProps & {
@@ -59,34 +65,33 @@ type Props = Readonly<
      * The value of the checkbox.  If true the checkbox will be turned on.
      * Default value is false.
      */
-    value?: boolean,
+    value?: boolean;
 
     /**
      * If true the user won't be able to toggle the checkbox.
      * Default value is false.
      */
-    disabled?: boolean,
+    disabled?: boolean;
 
     /**
      * Used to get the ref for the native checkbox
      */
-    forwardedRef?: React.Ref<CheckBoxNativeType>,
+    forwardedRef?: React.Ref<CheckBoxNativeType>;
 
-    lineWidth?: number,
-    hideBox?: boolean,
-    boxType?: BoxType
-    tintColor?: string,
-    onCheckColor?: string,
-    onFillColor?: string,
-    onTintColor?: string,
-    animationDuration?: number,
-    onAnimationType?: AnimationType,
-    offAnimationType?: AnimationType,
+    lineWidth?: number;
+    hideBox?: boolean;
+    boxType?: BoxType;
+    tintColor?: string;
+    onCheckColor?: string;
+    onFillColor?: string;
+    onTintColor?: string;
+    animationDuration?: number;
+    onAnimationType?: AnimationType;
+    offAnimationType?: AnimationType;
   }
 >;
 
 class CheckBox extends React.Component<Props> {
-
   _nativeRef: React.Ref<CheckBoxNativeType> | null = null;
   _setNativeRef = setAndForwardRef({
     getForwardedRef: () => this.props.forwardedRef,
@@ -96,17 +101,17 @@ class CheckBox extends React.Component<Props> {
   });
 
   _onChange = (event: CheckBoxEvent) => {
-    const {
-      onValueChange,
-    } = this.props;
+    const {onValueChange} = this.props;
 
-    const { value } = event.nativeEvent;
+    const {value} = event.nativeEvent;
     // @ts-ignore
     nullthrows(this._nativeRef).setNativeProps({value});
     onValueChange && onValueChange(value);
   };
 
   render() {
+    // Do not use onValueChange directly from props
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const {style, onValueChange, ...props} = this.props;
     return (
       <IOSCheckBoxNativeComponent
@@ -115,7 +120,7 @@ class CheckBox extends React.Component<Props> {
         ref={this._setNativeRef}
         onValueChange={this._onChange}
       />
-    )
+    );
   }
 }
 
