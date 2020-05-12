@@ -10,7 +10,7 @@ defaults: &defaults
 linux_defaults: &linux_defaults
   <<: *defaults
   docker:
-  - image: circleci/node:chakracore-10.13.0
+  - image: circleci/node:12
   environment:
   - PATH: "/opt/yarn/yarn-v1.5.1/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
 
