@@ -131,22 +131,9 @@ jobs:
     - run:
         name: Build Android Example App and Library
         command: |-
-          cd example/android
-          ./gradlew clean assembleDebug
+          cd example
+          yarn android
     - save-cache: *save-gradle-cache
-  
-  ios-checkout:
-    <<: *macos_defaults
-    steps:
-    - checkout
-    - restore-cache: *restore-yarn-cache
-    - run: rm -rf node_modules
-    - run: yarn cache clean
-    - run: *yarn
-    - save-cache: *save-yarn-cache
-    - persist_to_workspace:
-        root: .
-        paths: .
 
   ios-compile:
     <<: *macos_defaults
@@ -157,7 +144,7 @@ jobs:
         name: Build example app
         command: |-
           cd example
-          yarn ios
+          npx pod-install && yarn ios
 
 # -------------------------
 #        WORKFLOWS
@@ -179,7 +166,6 @@ workflows:
     - android-compile:
         requires:
         - linux-checkout
-    - ios-checkout
     - ios-compile:
         requires:
-        - ios-checkout
+        - linux-checkout
