@@ -32,6 +32,17 @@ type CheckBoxEvent = NativeSyntheticEvent<
 type CommonProps = Readonly<
   ViewProps & {
     /**
+     * Used to get the ref for the native checkbox
+     */
+    forwardedRef?: React.Ref<CheckBoxNativeType>;
+
+    /**
+     * The value of the checkbox.  If true the checkbox will be turned on.
+     * Default value is false.
+     */
+    value?: boolean;
+
+    /**
      * Used in case the props change removes the component.
      */
     onChange?: (event: CheckBoxEvent) => void;
@@ -40,6 +51,13 @@ type CommonProps = Readonly<
      * Invoked with the new value when the value changes.
      */
     onValueChange?: (value: boolean) => void;
+
+    /**
+     * If true the user won't be able to toggle the checkbox.
+     * Default value is false.
+     * @TODO: implement disable prop for IOS
+     */
+    disabled?: boolean;
 
     /**
      * Used to locate this view in end-to-end tests.
@@ -61,23 +79,7 @@ type AnimationType =
 
 type Props = Readonly<
   CommonProps & {
-    /**
-     * The value of the checkbox.  If true the checkbox will be turned on.
-     * Default value is false.
-     */
-    value?: boolean;
-
-    /**
-     * If true the user won't be able to toggle the checkbox.
-     * Default value is false.
-     */
-    disabled?: boolean;
-
-    /**
-     * Used to get the ref for the native checkbox
-     */
-    forwardedRef?: React.Ref<CheckBoxNativeType>;
-
+    onAnimationDidStop?: Function;
     lineWidth?: number;
     hideBox?: boolean;
     boxType?: BoxType;
