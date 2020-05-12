@@ -1,6 +1,6 @@
 {
   "name": "@react-native-community/checkbox",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "React Native Checkbox native modules for Android",
   "keywords": [
     "checkbox",
@@ -34,7 +34,6 @@
     "detox": "^16.4.1",
     "eslint": "^6.8.0",
     "eslint-plugin-prettier": "^3.1.2",
-    "flow-bin": "^0.86.0",
     "jest": "^24.7.1",
     "metro-react-native-babel-preset": "0.59.0",
     "prettier": "^2.0.5",
@@ -51,5 +50,25 @@
   },
   "publishConfig": {
     "access": "public"
+  },
+  "eslintConfig": {
+    "extends": "@react-native-community",
+    "env": {
+      "es6": true,
+      "jest": true
+    },
+    "globals": {
+      "it": true,
+      "expect": true,
+      "element": true,
+      "describe": true,
+      "by": true,
+      "device": true,
+      "beforeAll": true,
+      "beforeEach": true,
+      "afterAll": true,
+      "jest": true,
+      "jasmine": true
+    }
   }
 }

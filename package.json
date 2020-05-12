@@ -32,26 +32,6 @@
       "/e2e"
     ]
   },
-  "eslintConfig": {
-    "extends": "@react-native-community",
-    "env": {
-      "es6": true,
-      "jest": true
-    },
-    "globals": {
-      "it": true,
-      "expect": true,
-      "element": true,
-      "describe": true,
-      "by": true,
-      "device": true,
-      "beforeAll": true,
-      "beforeEach": true,
-      "afterAll": true,
-      "jest": true,
-      "jasmine": true
-    }
-  },
   "detox": {
     "test-runner": "jest",
     "runner-config": "example/e2e/config.json",
