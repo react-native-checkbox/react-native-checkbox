@@ -166,6 +166,7 @@ workflows:
     - android-compile:
         requires:
         - linux-checkout
-    - ios-compile:
-        requires:
-        - linux-checkout
+    # TODO: implement ios compile on CI
+    # - ios-compile:
+    #     requires:
+    #     - linux-checkout
