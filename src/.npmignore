@@ -27,7 +27,6 @@ ios/*.xcodeproj/xcuserdata
 *.xcuserstate
 project.xcworkspace/
 xcuserdata/
-Pods
 
 # Misc
 .DS_Store
