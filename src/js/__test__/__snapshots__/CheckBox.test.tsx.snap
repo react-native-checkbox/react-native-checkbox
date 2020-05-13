@@ -1,0 +1,129 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render Android <Checkbox /> renders Android Checkbox with value 1`] = `
+<AndroidCheckBox
+  enabled={true}
+  forwardedRef={null}
+  on={true}
+  onChange={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Array [
+      Object {
+        "height": 32,
+        "width": 32,
+      },
+      undefined,
+    ]
+  }
+  value={true}
+/>
+`;
+
+exports[`render Android <Checkbox /> renders disabled Android Checkbox 1`] = `
+<AndroidCheckBox
+  disabled={true}
+  enabled={false}
+  forwardedRef={null}
+  on={false}
+  onChange={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Array [
+      Object {
+        "height": 32,
+        "width": 32,
+      },
+      undefined,
+    ]
+  }
+/>
+`;
+
+exports[`render Android <Checkbox /> renders enabled Android Checkbox 1`] = `
+<AndroidCheckBox
+  enabled={true}
+  forwardedRef={null}
+  on={false}
+  onChange={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Array [
+      Object {
+        "height": 32,
+        "width": 32,
+      },
+      undefined,
+    ]
+  }
+/>
+`;
+
+exports[`render IOS <Checkbox /> renders IOS Checkbox with full setting 1`] = `
+<RNCCheckbox
+  animationDuration={0.5}
+  boxType="circle"
+  disabled={false}
+  forwardedRef={null}
+  hideBox={false}
+  lineWidth={2}
+  offAnimationType="stroke"
+  onAnimationDidStop={[Function]}
+  onAnimationType="bounce"
+  onCheckColor="#6F763F"
+  onFillColor="#4DABEC"
+  onTintColor="#F4DCF8"
+  onValueChange={[Function]}
+  style={
+    Array [
+      Object {
+        "backgroundColor": "transparent",
+        "height": 32,
+        "width": 32,
+      },
+      undefined,
+    ]
+  }
+  tintColor="#9E663C"
+  value={false}
+/>
+`;
+
+exports[`render IOS <Checkbox /> renders enabled IOS Checkbox 1`] = `
+<RNCCheckbox
+  forwardedRef={null}
+  onValueChange={[Function]}
+  style={
+    Array [
+      Object {
+        "backgroundColor": "transparent",
+        "height": 32,
+        "width": 32,
+      },
+      undefined,
+    ]
+  }
+/>
+`;
+
+exports[`render IOS <Checkbox /> renders hideBox IOS Checkbox 1`] = `
+<RNCCheckbox
+  forwardedRef={null}
+  hideBox={true}
+  onValueChange={[Function]}
+  style={
+    Array [
+      Object {
+        "backgroundColor": "transparent",
+        "height": 32,
+        "width": 32,
+      },
+      undefined,
+    ]
+  }
+  value={true}
+/>
+`;
