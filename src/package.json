@@ -1,7 +1,7 @@
 {
   "name": "@react-native-community/checkbox",
   "version": "0.4.0",
-  "description": "React Native Checkbox native modules for Android",
+  "description": "React Native Checkbox native modules for Android and IOS",
   "keywords": [
     "checkbox",
     "react native",

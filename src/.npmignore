@@ -1,35 +1,13 @@
 # JS
 node_modules
-yarn.lock
-
-# Project files
-CONTRIBUTING.md
-CODE_OF_CONDUCT.md
-README.md
+js
 
 # Config files
-.babelrc
-babel.config.js
-.editorconfig
-.eslintrc
-.flowconfig
-.watchmanconfig
-jsconfig.json
-.npmrc
-.gitattributes
-.circleci
-*.coverage.json
-.opensource
-.circleci
-.eslintignore
-codecov.yml
+.npmignore
 
 # Android
 android/*/build/
-android/gradlew
 android/build
-android/gradlew.bat
-android/gradle/
 android/com_crashlytics_export_strings.xml
 android/local.properties
 android/.gradle/
@@ -37,6 +15,8 @@ android/.signing/
 android/.idea
 android/*.iml
 android/.settings
+android/.project
+android/android.iml
 
 # iOS
 ios/*.xcodeproj/xcuserdata
@@ -47,6 +27,7 @@ ios/*.xcodeproj/xcuserdata
 *.xcuserstate
 project.xcworkspace/
 xcuserdata/
+Pods
 
 # Misc
 .DS_Store
