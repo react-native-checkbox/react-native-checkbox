@@ -3,8 +3,8 @@
 
 React Native component for Checkbox
 
-![Alt text](screenShots/demo-android.png)
-![Alt text](screenShots/demo-ios.png)
+<img src="screenShots/demo-android.png" width="320"/>
+<img src="screenShots/demo-ios.png" width="320"/>
 
 ## Support
 
