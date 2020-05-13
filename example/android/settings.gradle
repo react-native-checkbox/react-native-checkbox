@@ -1,3 +1,7 @@
-rootProject.name = 'CheckboxExample'
-apply from: file("../node_modules/@react-native-community/cli-platform-android/native_modules.gradle"); applyNativeModulesSettingsGradle(settings)
+rootProject.name = 'example'
+
+include ':react-native-checkbox'
+project(':react-native-checkbox').projectDir = new File(rootProject.projectDir, '../../android')
+
+apply from: file("../../node_modules/@react-native-community/cli-platform-android/native_modules.gradle"); applyNativeModulesSettingsGradle(settings)
 include ':app'

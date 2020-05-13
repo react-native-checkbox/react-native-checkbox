@@ -1,0 +1,53 @@
+# JS
+node_modules
+js
+
+# Config files
+.npmignore
+
+# Android
+android/*/build/
+android/build
+android/com_crashlytics_export_strings.xml
+android/local.properties
+android/.gradle/
+android/.signing/
+android/.idea
+android/*.iml
+android/.settings
+android/.project
+android/android.iml
+
+# iOS
+ios/*.xcodeproj/xcuserdata
+*.pbxuser
+*.mode1v3
+*.mode2v3
+*.perspectivev3
+*.xcuserstate
+project.xcworkspace/
+xcuserdata/
+Pods
+
+# Misc
+.DS_Store
+.DS_Store?
+*.DS_Store
+coverage.android.json
+coverage.ios.json
+coverage
+npm-debug.log
+.github
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.dbandroid/gradle
+docs
+.idea
+tests/
+bin/test.js
+codorials
+.vscode
+.nyc_output
+.tmp

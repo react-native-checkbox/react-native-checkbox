@@ -1,0 +1,46 @@
+
+buildscript {
+    repositories {
+        google()
+        jcenter()
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.4.2'
+    }
+}
+
+apply plugin: 'com.android.library'
+
+def getExtOrDefault(name) {
+    return rootProject.ext.has(name) ? rootProject.ext.get(name) : project.properties['ReactNativeCheckBox_' + name]
+}
+
+def getExtOrIntegerDefault(name) {
+    return rootProject.ext.has(name) ? rootProject.ext.get(name) : (project.properties['ReactNativeCheckBox_' + name]).toInteger()
+}
+
+android {
+    compileSdkVersion getExtOrIntegerDefault('compileSdkVersion')
+    buildToolsVersion getExtOrDefault('buildToolsVersion')
+
+    defaultConfig {
+        minSdkVersion getExtOrIntegerDefault('minSdkVersion')
+        targetSdkVersion getExtOrIntegerDefault('targetSdkVersion')
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+}
+
+repositories {
+    google()
+    jcenter()
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'com.facebook.react:react-native:+'
+}
+  
