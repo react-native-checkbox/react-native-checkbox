@@ -57,7 +57,7 @@ type NativeProps = Readonly<
 
 type CheckBoxNativeType = typeof NativeComponent;
 
-type Props = Readonly<
+export type Props = Readonly<
   CommonProps & {
     /**
      * The value of the checkbox.  If true the checkbox will be turned on.

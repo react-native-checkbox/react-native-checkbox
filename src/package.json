@@ -1,6 +1,6 @@
 {
   "name": "@react-native-community/checkbox",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "description": "React Native Checkbox native modules for Android and IOS",
   "keywords": [
     "checkbox",
@@ -15,7 +15,7 @@
   "license": "MIT",
   "author": "Nicholas Lee <nicholaslee119@gmail.com>",
   "main": "dist/CheckBox",
-  "types": "dist/CheckBox.d.ts",
+  "types": "typings/index.d.ts",
   "scripts": {
     "build": "tsc"
   },

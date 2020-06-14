@@ -77,7 +77,7 @@ type AnimationType =
   | 'one-stroke'
   | 'fade';
 
-type Props = Readonly<
+export type Props = Readonly<
   CommonProps & {
     onAnimationDidStop?: Function;
     lineWidth?: number;
