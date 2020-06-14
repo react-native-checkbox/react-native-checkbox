@@ -1059,7 +1059,7 @@
     chalk "^3.0.0"
 
 "@react-native-community/checkbox@./src":
-  version "0.4.0"
+  version "0.4.2"
 
 "@react-native-community/cli-debugger-ui@^3.0.0":
   version "3.0.0"
