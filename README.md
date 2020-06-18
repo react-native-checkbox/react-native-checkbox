@@ -134,7 +134,7 @@ Check out the [example project](example) for more examples.
 | Prop name     | Type    | Description                                                                                                                                                                                                           |
 | ------------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | lineWidth     | boolean | The width of the lines of the check mark and box. Defaults to 2.0.                                                                                                                                        |
-| hideBox       | boolean | ontrol if the box should be hidden or not. Defaults to false |
+| hideBox       | boolean | Control if the box should be hidden or not. Defaults to false |
 | boxType       | 'circle' or 'square' |  The type of box to use. Defaults to 'circle' |
 | tintColor     | string  | The color of the box when the checkbox is Off. Defaults to '#aaaaaa' |
 | onCheckColor  | string  | The color of the check mark when it is On. Defaults to '#007aff' |
