@@ -103,7 +103,7 @@ import CheckBox from '@react-native-community/checkbox';
   <CheckBox
     disabled={false}
     value={toggleCheckBox}
-    onValueChange={() => toggleCheckBox ? setToggleCheckBox(false) : setToggleCheckBox(true)}
+    onValueChange={(newValue) => setToggleCheckBox(newValue)}
   />
 ```
 
