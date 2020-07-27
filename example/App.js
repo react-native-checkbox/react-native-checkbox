@@ -116,11 +116,45 @@ export default class App extends Component<Props, State> {
     );
   }
 
+  renderForWindows() {
+    return (
+      <View style={styles.container}>
+        <Text>Disabled checkbox</Text>
+        <CheckBox
+          value={true}
+          disabled={true}
+          />
+        <Text>{`[value: ${this.state.value0}]`}</Text>
+        <CheckBox
+          value={this.state.value0}
+          onValueChange={value =>
+            this.setState({
+              value0: value,
+            })
+          }
+        />
+        <Text>{`[value: ${this.state.value1}]`}</Text>
+        <CheckBox
+          tintColor={'green'}
+          onCheckColor={'red'}
+          onFillColor={'yellow'}
+          onTintColor={'#80F4E8'}
+          value={this.state.value1}
+          onValueChange={value =>
+            this.setState({
+              value1: value,
+            })
+          }
+        />
+      </View>
+    );
+  }
+
   render() {
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>Welcome to React Native Checkbox!</Text>
-        {isIOS ? this.renderForIOS() : this.renderForAndroid()}
+        {isIOS ? this.renderForIOS() : Platform.OS === 'windows' ? this.renderForWindows() : this.renderForAndroid()}
         <Text style={styles.instructions}>{instructions}</Text>
       </View>
     );
