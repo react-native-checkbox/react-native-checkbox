@@ -25,7 +25,6 @@ type CheckBoxEvent = NativeSyntheticEvent<
   Readonly<{
     target: number;
     value: boolean;
-    name: 'animation' | 'tap';
   }>
 >;
 
@@ -68,28 +67,12 @@ type CommonProps = Readonly<
 
 type CheckBoxNativeType = typeof NativeComponent;
 
-type BoxType = 'circle' | 'square';
-type AnimationType =
-  | 'stroke'
-  | 'fill'
-  | 'bounce'
-  | 'flat'
-  | 'one-stroke'
-  | 'fade';
-
 export type Props = Readonly<
   CommonProps & {
-    onAnimationDidStop?: Function;
-    lineWidth?: number;
-    hideBox?: boolean;
-    boxType?: BoxType;
     tintColor?: string;
     onCheckColor?: string;
     onFillColor?: string;
     onTintColor?: string;
-    animationDuration?: number;
-    onAnimationType?: AnimationType;
-    offAnimationType?: AnimationType;
   }
 >;
 
