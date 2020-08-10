@@ -25,9 +25,6 @@ namespace winrt::CheckboxWindows::implementation {
 
         void RegisterEvents();
         void OnCheckedHandler(winrt::Windows::Foundation::IInspectable const& /*sender*/, xaml::RoutedEventArgs const& args, bool isChecked);
-        // int64_t m_maxValue, m_minValue;
-        
-        // double m_value;
     };
 }
 
