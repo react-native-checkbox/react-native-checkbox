@@ -38,13 +38,21 @@ describe('render IOS <Checkbox />', () => {
     expect(tree).toMatchSnapshot();
   });
 
+  it('renders disabled IOS Checkbox', () => {
+    const tree = renderer
+      .create(<IosCheckbox disabled={true} value={true} />)
+      .toJSON();
+
+    expect(tree).toMatchSnapshot();
+  });
+
   it('renders IOS Checkbox with full setting', () => {
     const tree = renderer
       .create(
         <IosCheckbox
           value={false}
-          onValueChange={() => {}}
-          onAnimationDidStop={() => {}}
+          onValueChange={() => { }}
+          onAnimationDidStop={() => { }}
           lineWidth={2}
           hideBox={false}
           boxType={'circle'}
