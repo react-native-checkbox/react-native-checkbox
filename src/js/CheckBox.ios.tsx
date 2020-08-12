@@ -16,6 +16,7 @@ import {
   ViewProps,
   NativeComponent,
   NativeSyntheticEvent,
+  View,
 } from 'react-native';
 import IOSCheckBoxNativeComponent from './IOSCheckBoxNativeComponent';
 // @ts-ignore setAndForwardRef type does not exist in @types/react-native
@@ -88,6 +89,7 @@ export type Props = Readonly<
     onFillColor?: string;
     onTintColor?: string;
     animationDuration?: number;
+    disabled?: boolean;
     onAnimationType?: AnimationType;
     offAnimationType?: AnimationType;
   }
@@ -103,25 +105,27 @@ class CheckBox extends React.Component<Props> {
   });
 
   _onChange = (event: CheckBoxEvent) => {
-    const {onValueChange} = this.props;
+    const { onValueChange } = this.props;
 
-    const {value} = event.nativeEvent;
+    const { value } = event.nativeEvent;
     // @ts-ignore
-    nullthrows(this._nativeRef).setNativeProps({value});
+    nullthrows(this._nativeRef).setNativeProps({ value });
     onValueChange && onValueChange(value);
   };
 
   render() {
     // Do not use onValueChange directly from props
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const {style, onValueChange, ...props} = this.props;
+    const { style, onValueChange, disabled, ...props } = this.props;
     return (
-      <IOSCheckBoxNativeComponent
-        {...props}
-        style={[styles.rctCheckBox, style]}
-        ref={this._setNativeRef}
-        onValueChange={this._onChange}
-      />
+      <View pointerEvents={disabled ? 'none' : 'auto'}>
+        <IOSCheckBoxNativeComponent
+          {...props}
+          style={[styles.rctCheckBox, style]}
+          ref={this._setNativeRef}
+          onValueChange={this._onChange}
+        />
+      </View>
     );
   }
 }
