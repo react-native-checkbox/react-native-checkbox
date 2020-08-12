@@ -41,6 +41,12 @@ type CommonProps = Readonly<
     onValueChange?: (value: boolean) => void;
 
     /**
+     * If true the user won't be able to toggle the checkbox.
+     * Default value is false.
+     */
+    disabled?: boolean;
+
+    /**
      * Used to locate this view in end-to-end tests.
      */
     testID?: string;
@@ -64,12 +70,6 @@ export type Props = Readonly<
      * Default value is false.
      */
     value?: boolean;
-
-    /**
-     * If true the user won't be able to toggle the checkbox.
-     * Default value is false.
-     */
-    disabled?: boolean;
 
     /**
      * Used to get the ref for the native checkbox

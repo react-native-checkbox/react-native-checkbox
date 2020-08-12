@@ -56,7 +56,6 @@ type CommonProps = Readonly<
     /**
      * If true the user won't be able to toggle the checkbox.
      * Default value is false.
-     * @TODO: implement disable prop for IOS
      */
     disabled?: boolean;
 
@@ -89,7 +88,6 @@ export type Props = Readonly<
     onFillColor?: string;
     onTintColor?: string;
     animationDuration?: number;
-    disabled?: boolean;
     onAnimationType?: AnimationType;
     offAnimationType?: AnimationType;
   }
