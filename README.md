@@ -120,13 +120,14 @@ Check out the [example project](example) for more examples.
 | onChange      | function | Invoked on change with the native event.                                                                                                                                                                              |
 | onValueChange | function | Invoked with the new boolean value when it changes.                                                                                                                                                                   |
 | value         | boolean  | The value of the checkbox. If true the checkbox will be turned on. Default value is false.                                                                                                                            |
-| testID        | string   | Used to locate this view in end-to-end tests.                                                                                                                                                                         |
+| testID        | string   | Used to locate this view in end-to-end tests.                                                                                                                                                                         
+| disabled      | boolean | If true the user won't be able to toggle the checkbox. Default value is false.                      
+
 
 ## Android Only Props
 
 | Prop name     | Type    | Description                                                                                                                                                                                                           |
-| ------------- | ------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| disabled      | boolean | If true the user won't be able to toggle the checkbox. Default value is false.                                                                                                                                        |
+| ------------- | ------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------                                                                                                             |
 | tintColors    | string  | An object with the following shape: `{ true?: ?ColorValue, false?: ?ColorValue }`. The color value for `true` will be used when the checkbox is checked, and the color value for `false` will be used when it is off. |
 
 ## IOS Only Props
