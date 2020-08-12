@@ -105,18 +105,18 @@ class CheckBox extends React.Component<Props> {
   });
 
   _onChange = (event: CheckBoxEvent) => {
-    const { onValueChange } = this.props;
+    const {onValueChange} = this.props;
 
-    const { value } = event.nativeEvent;
+    const {value} = event.nativeEvent;
     // @ts-ignore
-    nullthrows(this._nativeRef).setNativeProps({ value });
+    nullthrows(this._nativeRef).setNativeProps({value});
     onValueChange && onValueChange(value);
   };
 
   render() {
     // Do not use onValueChange directly from props
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const { style, onValueChange, disabled, ...props } = this.props;
+    const {style, onValueChange, disabled, ...props} = this.props;
     return (
       <View pointerEvents={disabled ? 'none' : 'auto'}>
         <IOSCheckBoxNativeComponent

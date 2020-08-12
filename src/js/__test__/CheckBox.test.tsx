@@ -51,8 +51,8 @@ describe('render IOS <Checkbox />', () => {
       .create(
         <IosCheckbox
           value={false}
-          onValueChange={() => { }}
-          onAnimationDidStop={() => { }}
+          onValueChange={() => {}}
+          onAnimationDidStop={() => {}}
           lineWidth={2}
           hideBox={false}
           boxType={'circle'}

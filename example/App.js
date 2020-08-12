@@ -5,8 +5,8 @@
  * @lint-ignore-every XPLATJSCOPYRIGHT1
  */
 
-import React, { Component } from 'react';
-import { Platform, StyleSheet, Text, View } from 'react-native';
+import React, {Component} from 'react';
+import {Platform, StyleSheet, Text, View} from 'react-native';
 
 import CheckBox from '@react-native-community/checkbox';
 
@@ -21,11 +21,11 @@ const isIOS = Platform.OS === 'ios';
 
 type Props = {};
 type State = {
-  value0: boolean,
-  value1: boolean,
-  value2: boolean,
-  value3: boolean,
-  value4: boolean,
+  value0: boolean;
+  value1: boolean;
+  value2: boolean;
+  value3: boolean;
+  value4: boolean;
 };
 
 export default class App extends Component<Props, State> {
@@ -49,7 +49,7 @@ export default class App extends Component<Props, State> {
         <CheckBox
           disabled={true}
           value={this.state.value0}
-          onValueChange={value =>
+          onValueChange={(value) =>
             this.setState({
               value0: value,
             })
@@ -59,7 +59,7 @@ export default class App extends Component<Props, State> {
         <CheckBox
           value={this.state.value4}
           hideBox={true}
-          onValueChange={value =>
+          onValueChange={(value) =>
             this.setState({
               value4: value,
             })
@@ -69,7 +69,7 @@ export default class App extends Component<Props, State> {
         <CheckBox
           value={this.state.value3}
           boxType={'square'}
-          onValueChange={value =>
+          onValueChange={(value) =>
             this.setState({
               value3: value,
             })
@@ -78,7 +78,7 @@ export default class App extends Component<Props, State> {
         <Text>{`[value: ${this.state.value2}]`}</Text>
         <CheckBox
           value={this.state.value2}
-          onValueChange={value =>
+          onValueChange={(value) =>
             this.setState({
               value2: value,
             })
@@ -107,7 +107,7 @@ export default class App extends Component<Props, State> {
         <CheckBox
           disabled={true}
           value={this.state.value0}
-          onValueChange={value =>
+          onValueChange={(value) =>
             this.setState({
               value0: value,
             })
@@ -116,7 +116,7 @@ export default class App extends Component<Props, State> {
         <Text>{`[value: ${this.state.value1}]`}</Text>
         <CheckBox
           value={this.state.value1}
-          onValueChange={value =>
+          onValueChange={(value) =>
             this.setState({
               value1: value,
             })
