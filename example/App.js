@@ -5,8 +5,8 @@
  * @lint-ignore-every XPLATJSCOPYRIGHT1
  */
 
-import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View} from 'react-native';
+import React, { Component } from 'react';
+import { Platform, StyleSheet, Text, View } from 'react-native';
 
 import CheckBox from '@react-native-community/checkbox';
 
@@ -45,6 +45,16 @@ export default class App extends Component<Props, State> {
   renderForIOS() {
     return (
       <View style={styles.container}>
+        <Text>{`[value: ${this.state.value0}]`}</Text>
+        <CheckBox
+          disabled={true}
+          value={this.state.value0}
+          onValueChange={value =>
+            this.setState({
+              value0: value,
+            })
+          }
+        />
         <Text>{`[value: ${this.state.value4}]`}</Text>
         <CheckBox
           value={this.state.value4}
