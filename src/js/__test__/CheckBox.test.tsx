@@ -46,6 +46,20 @@ describe('render IOS <Checkbox />', () => {
     expect(tree).toMatchSnapshot();
   });
 
+  it('renders disabled false IOS Checkbox', () => {
+    const tree = renderer
+      .create(<IosCheckbox disabled={false} value={true} />)
+      .toJSON();
+
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('renders IOS Checkbox without disabled props', () => {
+    const tree = renderer.create(<IosCheckbox value={true} />).toJSON();
+
+    expect(tree).toMatchSnapshot();
+  });
+
   it('renders IOS Checkbox with full setting', () => {
     const tree = renderer
       .create(
