@@ -2,8 +2,9 @@ import {Component} from 'react';
 import {Constructor, NativeMethodsMixin} from 'react-native';
 import {Props as AndroidProps} from '../js/CheckBox.android';
 import {Props as IOSProps} from '../js/CheckBox.ios';
+import {Props as WindowsProps} from '../js/CheckBox.windows';
 
-type CheckBoxProps = AndroidProps & IOSProps;
+type CheckBoxProps = AndroidProps & IOSProps & WindowsProps;
 
 declare class CheckBoxComponent extends Component<CheckBoxProps> {}
 declare const CheckBoxBase: Constructor<NativeMethodsMixin> &

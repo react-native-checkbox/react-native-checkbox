@@ -1,0 +1,11 @@
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
+namespace CheckboxWindows {
+
+    [default_interface]
+    runtimeclass CheckboxView : Windows.UI.Xaml.Controls.CheckBox {
+        CheckboxView(Microsoft.ReactNative.IReactContext context);
+        void UpdateProperties(Microsoft.ReactNative.IJSValueReader reader);
+    };
+}

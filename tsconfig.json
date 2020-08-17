@@ -14,7 +14,7 @@
     /* Strict Type-Checking Options */
     "strict": true,                           /* Enable all strict type-checking options. */
     "baseUrl": "./",
-    "paths": {"*":["*","*.ios","*.android"]},                           /* A series of entries which re-map imports to lookup locations relative to the 'baseUrl'. */
+    "paths": {"*":["*","*.ios","*.android", "*.windows"]},                  /* A series of entries which re-map imports to lookup locations relative to the 'baseUrl'. */
     "esModuleInterop": true                   /* Enables emit interoperability between CommonJS and ES Modules via creation of namespace objects for all imports. Implies 'allowSyntheticDefaultImports'. */
   },
   "exclude": [

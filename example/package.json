@@ -5,11 +5,13 @@
   "scripts": {
     "start": "node ../node_modules/react-native/local-cli/cli.js start",
     "android": "react-native run-android",
-    "ios": "react-native run-ios"
+    "ios": "react-native run-ios",
+    "windows": "react-native start --use-react-native-windows --projectRoot ../"
   },
   "dependencies": {
-    "react": "16.9.0",
-    "react-native": "0.61.2",
+    "react": "16.11.0",
+    "react-native": "^0.62",
+    "react-native-windows": "^0.62",
     "@react-native-community/checkbox": "./src"
   }
 }
