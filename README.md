@@ -3,11 +3,9 @@
 
 React Native component for Checkbox
 
-Android Example             |  IOS Example
-:-------------------------:|:-------------------------:
-<img src="screenShots/demo-android.png" width="320"/>  |  <img src="screenShots/demo-ios.png" width="320"/>
-Windows Example             |
-<img src="screenShots/demo-windows.png" width="520"/>
+Android Example             |  IOS Example | Windows Example             |
+:-------------------------:|:-------------------------: | :-------------------------:
+<img src="screenShots/demo-android.png" width="320"/>  |  <img src="screenShots/demo-ios.png" width="320"/> | <img src="screenShots/demo-windows.png" width="520"/>
 
 
 
