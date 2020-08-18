@@ -41,6 +41,12 @@ type CommonProps = Readonly<
     onValueChange?: (value: boolean) => void;
 
     /**
+     * If true the user won't be able to toggle the checkbox.
+     * Default value is false.
+     */
+    disabled?: boolean;
+
+    /**
      * Used to locate this view in end-to-end tests.
      */
     testID?: string;
@@ -51,7 +57,7 @@ type NativeProps = Readonly<
   CommonProps & {
     on?: boolean;
     enabled?: boolean;
-    tintColors: {true?: number; false?: number} | typeof undefined;
+    tintColors: {true: any; false: any} | undefined;
   }
 >;
 
@@ -66,20 +72,15 @@ export type Props = Readonly<
     value?: boolean;
 
     /**
-     * If true the user won't be able to toggle the checkbox.
-     * Default value is false.
-     */
-    disabled?: boolean;
-
-    /**
      * Used to get the ref for the native checkbox
      */
     forwardedRef?: React.Ref<CheckBoxNativeType>;
 
     /**
      * Controls the colors the checkbox has in checked and unchecked states.
+     * TODO: improve this type
      */
-    tintColors?: {true?: number; false?: number};
+    tintColors?: {true: any; false: any};
   }
 >;
 
@@ -160,7 +161,7 @@ class CheckBox extends React.Component<Props> {
       this.props.onValueChange(event.nativeEvent.value);
   };
 
-  getTintColors(tintColors: {true?: number; false?: number} | undefined) {
+  getTintColors(tintColors: {true: any; false: any} | undefined) {
     return tintColors
       ? {
           true: processColor(tintColors.true),

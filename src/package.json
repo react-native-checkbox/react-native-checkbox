@@ -1,7 +1,7 @@
 {
   "name": "@react-native-community/checkbox",
-  "version": "0.4.2",
-  "description": "React Native Checkbox native modules for Android and IOS",
+  "version": "0.5.0",
+  "description": "React Native Checkbox native modules for Android , iOS and Windows ",
   "keywords": [
     "checkbox",
     "react native",
@@ -34,8 +34,9 @@
     "jest": "^24.7.1",
     "metro-react-native-babel-preset": "0.59.0",
     "prettier": "^2.0.5",
-    "react": "16.9.0",
-    "react-native": "0.61.2",
+    "react": "16.11.0",
+    "react-native": "0.62",
+    "react-native-windows": "^0.62",
     "react-test-renderer": "16.9.0",
     "ts-jest": "^24.2.0",
     "typescript": "^3.8.3",
@@ -43,7 +44,8 @@
   },
   "peerDependencies": {
     "react": "*",
-    "react-native": ">= 0.60"
+    "react-native": ">= 0.60",
+    "react-native-windows": ">=0.62"
   },
   "publishConfig": {
     "access": "public"

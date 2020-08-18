@@ -16,9 +16,8 @@ import {
   ViewProps,
   NativeComponent,
   NativeSyntheticEvent,
-  View,
 } from 'react-native';
-import IOSCheckBoxNativeComponent from './IOSCheckBoxNativeComponent';
+import WindowsCheckBoxNativeComponent from './WindowsCheckBoxComponent';
 // @ts-ignore setAndForwardRef type does not exist in @types/react-native
 import setAndForwardRef from 'react-native/Libraries/Utilities/setAndForwardRef';
 
@@ -26,7 +25,6 @@ type CheckBoxEvent = NativeSyntheticEvent<
   Readonly<{
     target: number;
     value: boolean;
-    name: 'animation' | 'tap';
   }>
 >;
 
@@ -56,6 +54,7 @@ type CommonProps = Readonly<
     /**
      * If true the user won't be able to toggle the checkbox.
      * Default value is false.
+     * @TODO: implement disable prop for IOS
      */
     disabled?: boolean;
 
@@ -68,28 +67,12 @@ type CommonProps = Readonly<
 
 type CheckBoxNativeType = typeof NativeComponent;
 
-type BoxType = 'circle' | 'square';
-type AnimationType =
-  | 'stroke'
-  | 'fill'
-  | 'bounce'
-  | 'flat'
-  | 'one-stroke'
-  | 'fade';
-
 export type Props = Readonly<
   CommonProps & {
-    onAnimationDidStop?: Function;
-    lineWidth?: number;
-    hideBox?: boolean;
-    boxType?: BoxType;
     tintColor?: string;
     onCheckColor?: string;
     onFillColor?: string;
     onTintColor?: string;
-    animationDuration?: number;
-    onAnimationType?: AnimationType;
-    offAnimationType?: AnimationType;
   }
 >;
 
@@ -103,28 +86,25 @@ class CheckBox extends React.Component<Props> {
   });
 
   _onChange = (event: CheckBoxEvent) => {
-    const {onValueChange, onChange} = this.props;
+    const {onValueChange} = this.props;
 
     const {value} = event.nativeEvent;
     // @ts-ignore
     nullthrows(this._nativeRef).setNativeProps({value});
-    onChange && onChange(event);
     onValueChange && onValueChange(value);
   };
 
   render() {
     // Do not use onValueChange directly from props
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const {style, onValueChange, disabled, ...props} = this.props;
+    const {style, onValueChange, ...props} = this.props;
     return (
-      <View pointerEvents={disabled ? 'none' : 'auto'}>
-        <IOSCheckBoxNativeComponent
-          {...props}
-          style={[styles.rctCheckBox, style]}
-          ref={this._setNativeRef}
-          onValueChange={this._onChange}
-        />
-      </View>
+      <WindowsCheckBoxNativeComponent
+        {...props}
+        style={[styles.rctCheckBox, style]}
+        ref={this._setNativeRef}
+        onChange={this._onChange}
+      />
     );
   }
 }
