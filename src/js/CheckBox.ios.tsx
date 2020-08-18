@@ -16,6 +16,7 @@ import {
   ViewProps,
   NativeComponent,
   NativeSyntheticEvent,
+  View,
 } from 'react-native';
 import IOSCheckBoxNativeComponent from './IOSCheckBoxNativeComponent';
 // @ts-ignore setAndForwardRef type does not exist in @types/react-native
@@ -55,7 +56,6 @@ type CommonProps = Readonly<
     /**
      * If true the user won't be able to toggle the checkbox.
      * Default value is false.
-     * @TODO: implement disable prop for IOS
      */
     disabled?: boolean;
 
@@ -115,14 +115,16 @@ class CheckBox extends React.Component<Props> {
   render() {
     // Do not use onValueChange directly from props
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const {style, onValueChange, ...props} = this.props;
+    const {style, onValueChange, disabled, ...props} = this.props;
     return (
-      <IOSCheckBoxNativeComponent
-        {...props}
-        style={[styles.rctCheckBox, style]}
-        ref={this._setNativeRef}
-        onValueChange={this._onChange}
-      />
+      <View pointerEvents={disabled ? 'none' : 'auto'}>
+        <IOSCheckBoxNativeComponent
+          {...props}
+          style={[styles.rctCheckBox, style]}
+          ref={this._setNativeRef}
+          onValueChange={this._onChange}
+        />
+      </View>
     );
   }
 }
