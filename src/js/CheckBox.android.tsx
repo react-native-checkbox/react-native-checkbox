@@ -57,7 +57,7 @@ type NativeProps = Readonly<
   CommonProps & {
     on?: boolean;
     enabled?: boolean;
-    tintColors: {true?: number; false?: number} | typeof undefined;
+    tintColors: {true: any; false: any} | undefined;
   }
 >;
 
@@ -78,8 +78,9 @@ export type Props = Readonly<
 
     /**
      * Controls the colors the checkbox has in checked and unchecked states.
+     * TODO: improve this type
      */
-    tintColors?: {true?: number; false?: number};
+    tintColors?: {true: any; false: any};
   }
 >;
 
@@ -160,7 +161,7 @@ class CheckBox extends React.Component<Props> {
       this.props.onValueChange(event.nativeEvent.value);
   };
 
-  getTintColors(tintColors: {true?: number; false?: number} | undefined) {
+  getTintColors(tintColors: {true: any; false: any} | undefined) {
     return tintColors
       ? {
           true: processColor(tintColors.true),
