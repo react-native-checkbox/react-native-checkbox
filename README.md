@@ -15,7 +15,7 @@ Android Example             |  IOS Example | Windows Example             |
 | --------       | ----------------      |
 | > 0.60         |  >= 0.3 (Support IOS from 0.4) |
 | < 0.60         |  0.2 (only Android)   |
-| >= 0.62 to run on Windows |
+| >= 0.62 to run on Windows | 0.5        |
 
 ## Getting started
 
