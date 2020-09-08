@@ -19,6 +19,7 @@
   },
   "exclude": [
     "node_modules",
-    "**/__test__/**/*"
+    "**/__test__/**/*",
+    "src/typings"
   ]
 }
