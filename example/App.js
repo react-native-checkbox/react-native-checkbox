@@ -6,7 +6,7 @@
  */
 
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View} from 'react-native';
+import {Platform, StyleSheet, Text, View, Button} from 'react-native';
 
 import CheckBox from '@react-native-community/checkbox';
 
@@ -96,6 +96,14 @@ export default class App extends Component<Props, State> {
           onAnimationType={'bounce'}
           offAnimationType={'stroke'}
         />
+        <Button
+          onPress={() =>
+            this.setState({
+              value2: !this.state.value2,
+            })
+          }
+          title="toggle the value above"
+        />
       </View>
     );
   }
@@ -121,6 +129,14 @@ export default class App extends Component<Props, State> {
               value1: value,
             })
           }
+        />
+        <Button
+          onPress={() =>
+            this.setState({
+              value1: !this.state.value1,
+            })
+          }
+          title="toggle the value above"
         />
       </View>
     );
@@ -152,6 +168,14 @@ export default class App extends Component<Props, State> {
               value1: value,
             })
           }
+        />
+        <Button
+          onPress={() =>
+            this.setState({
+              value1: !this.state.value1,
+            })
+          }
+          title="toggle the value above"
         />
       </View>
     );
