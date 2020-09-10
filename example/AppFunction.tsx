@@ -26,11 +26,7 @@ export default function App() {
     return (
       <View style={styles.container}>
         <Text>{`[value: ${value}]`}</Text>
-        <CheckBox
-          value={value}
-          hideBox={true}
-          onValueChange={(val) => setValue(val)}
-        />
+        <CheckBox value={value} onValueChange={(val) => setValue(val)} />
         <Button
           onPress={() => setValue(!value)}
           title="toggle the value above"
