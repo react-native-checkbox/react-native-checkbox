@@ -26,6 +26,7 @@ type State = {
   value2: boolean;
   value3: boolean;
   value4: boolean;
+  lineWidth: number;
 };
 
 export default class App extends Component<Props, State> {
