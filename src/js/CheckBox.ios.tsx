@@ -14,7 +14,7 @@ import React from 'react';
 import {
   StyleSheet,
   ViewProps,
-  NativeComponent,
+  NativeMethods,
   NativeSyntheticEvent,
   View,
 } from 'react-native';
@@ -66,7 +66,7 @@ type CommonProps = Readonly<
   }
 >;
 
-type CheckBoxNativeType = typeof NativeComponent;
+type CheckBoxNativeType = NativeMethods;
 
 type BoxType = 'circle' | 'square';
 type AnimationType =
@@ -120,6 +120,7 @@ class CheckBox extends React.Component<Props> {
       <View pointerEvents={disabled ? 'none' : 'auto'}>
         <IOSCheckBoxNativeComponent
           {...props}
+          // @ts-ignore TODO: implement the type of IOSCheckBoxNativeComponent
           style={[styles.rctCheckBox, style]}
           ref={this._setNativeRef}
           onValueChange={this._onChange}
@@ -140,7 +141,7 @@ const styles = StyleSheet.create({
 /**
  * Can't use CheckBoxNativeType because it has different props
  */
-type CheckBoxType = typeof NativeComponent;
+type CheckBoxType = NativeMethods;
 
 const CheckBoxWithRef = React.forwardRef(function CheckBoxWithRef(
   props: Props,

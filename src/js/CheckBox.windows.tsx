@@ -14,7 +14,7 @@ import React from 'react';
 import {
   StyleSheet,
   ViewProps,
-  NativeComponent,
+  NativeMethods,
   NativeSyntheticEvent,
 } from 'react-native';
 import WindowsCheckBoxNativeComponent from './WindowsCheckBoxComponent';
@@ -65,7 +65,7 @@ type CommonProps = Readonly<
   }
 >;
 
-type CheckBoxNativeType = typeof NativeComponent;
+type CheckBoxNativeType = NativeMethods;
 
 export type Props = Readonly<
   CommonProps & {
@@ -101,6 +101,7 @@ class CheckBox extends React.Component<Props> {
     return (
       <WindowsCheckBoxNativeComponent
         {...props}
+        // @ts-ignore TODO: implement the type of WindowsCheckBoxNativeComponent
         style={[styles.rctCheckBox, style]}
         ref={this._setNativeRef}
         onChange={this._onChange}
@@ -120,7 +121,7 @@ const styles = StyleSheet.create({
 /**
  * Can't use CheckBoxNativeType because it has different props
  */
-type CheckBoxType = typeof NativeComponent;
+type CheckBoxType = NativeMethods;
 
 const CheckBoxWithRef = React.forwardRef(function CheckBoxWithRef(
   props: Props,
