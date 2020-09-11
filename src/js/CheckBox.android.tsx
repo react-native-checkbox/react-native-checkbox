@@ -13,7 +13,7 @@ import {
   StyleSheet,
   processColor,
   ViewProps,
-  NativeComponent,
+  NativeMethods,
   NativeSyntheticEvent,
 } from 'react-native';
 // @ts-ignore setAndForwardRef type does not exist in @types/react-native
@@ -61,7 +61,7 @@ type NativeProps = Readonly<
   }
 >;
 
-type CheckBoxNativeType = typeof NativeComponent;
+type CheckBoxNativeType = NativeMethods;
 
 export type Props = Readonly<
   CommonProps & {
@@ -188,6 +188,7 @@ class CheckBox extends React.Component<Props> {
       <AndroidCheckBoxNativeComponent
         {...nativeProps}
         ref={this._setNativeRef}
+        // @ts-ignore TODO: implement the type of AndroidCheckBoxNativeComponent
         onChange={this._onChange}
       />
     );
@@ -204,7 +205,7 @@ const styles = StyleSheet.create({
 /**
  * Can't use CheckBoxNativeType because it has different props
  */
-type CheckBoxType = typeof NativeComponent;
+type CheckBoxType = NativeMethods;
 
 const CheckBoxWithRef = React.forwardRef(function CheckBoxWithRef(
   props: Props,
