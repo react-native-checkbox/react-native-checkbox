@@ -13,7 +13,7 @@ Android Example             |  IOS Example | Windows Example             |
 
 | RN version     | Checkbox version      |
 | --------       | ----------------      |
-| > 0.60         |  >= 0.3 (Support IOS from 0.4) |
+| > 0.60 & < 0.62   |  >= 0.3 (Support IOS from 0.4) |
 | < 0.60         |  0.2 (only Android)   |
 | >= 0.62 to run on Windows | 0.5        |
 
