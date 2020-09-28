@@ -125,6 +125,7 @@ export default class App extends Component<Props, State> {
         <Text>{`[value: ${this.state.value1}]`}</Text>
         <CheckBox
           value={this.state.value1}
+          tintColors={{true: '#ff0000'}}
           onValueChange={(value) =>
             this.setState({
               value1: value,
