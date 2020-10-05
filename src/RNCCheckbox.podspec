@@ -17,6 +17,6 @@ Pod::Spec.new do |s|
   s.source       = { :git => "https://github.com/react-native-community/react-native-checkbox.git", :tag => "master" }
   s.source_files  = "ios/**/*.{h,m}"
 
-  s.dependency "React"
+  s.dependency "React-Core"
 
 end
