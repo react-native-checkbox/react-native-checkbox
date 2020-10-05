@@ -241,8 +241,8 @@ PODS:
     - React-cxxreact (= 0.62.2)
     - React-jsi (= 0.62.2)
     - ReactCommon/callinvoker (= 0.62.2)
-  - RNCCheckbox (0.5.2):
-    - React
+  - RNCCheckbox (0.5.5):
+    - React-Core
   - Yoga (1.14.0)
 
 DEPENDENCIES:
@@ -272,7 +272,7 @@ DEPENDENCIES:
   - React-RCTVibration (from `../../node_modules/react-native/Libraries/Vibration`)
   - ReactCommon/callinvoker (from `../../node_modules/react-native/ReactCommon`)
   - ReactCommon/turbomodule/core (from `../../node_modules/react-native/ReactCommon`)
-  - "RNCCheckbox (from `../node_modules/@react-native-community/checkbox`)"
+  - RNCCheckbox (from `../../src`)
   - Yoga (from `../../node_modules/react-native/ReactCommon/yoga`)
 
 SPEC REPOS:
@@ -329,7 +329,7 @@ EXTERNAL SOURCES:
   ReactCommon:
     :path: "../../node_modules/react-native/ReactCommon"
   RNCCheckbox:
-    :path: "../node_modules/@react-native-community/checkbox"
+    :path: "../../src"
   Yoga:
     :path: "../../node_modules/react-native/ReactCommon/yoga"
 
@@ -359,7 +359,7 @@ SPEC CHECKSUMS:
   React-RCTText: fae545b10cfdb3d247c36c56f61a94cfd6dba41d
   React-RCTVibration: 4356114dbcba4ce66991096e51a66e61eda51256
   ReactCommon: ed4e11d27609d571e7eee8b65548efc191116eb3
-  RNCCheckbox: 7af31eb0b0bec9c5c8e3fc78e32e3e4b463d9612
+  RNCCheckbox: 196b3e47add6514d041d8657e0c044e5cfbe22b1
   Yoga: 3ebccbdd559724312790e7742142d062476b698e
 
 PODFILE CHECKSUM: 65ed4e66fef8e5bea5ac04bddc5f5646eead8fdb
