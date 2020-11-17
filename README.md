@@ -105,7 +105,7 @@ Add `PackageProviders().Append(winrt::CheckboxWindows::ReactPackageProvider());`
 </details>
 
 ## Migrating from the core `react-native` module
-This module was created when the CheckBox was split out from the core of React Native. To migrate to this module you need to follow the installation instructions above and then change you imports from:
+This module was created when the CheckBox was split out from the core of React Native. To migrate to this module you need to follow the installation instructions above and then change your imports from:
 
 ```javascript
 import { CheckBox } from 'react-native';
