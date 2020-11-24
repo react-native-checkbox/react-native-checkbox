@@ -29,7 +29,7 @@ On iOS, install cocoapods:
 
 `npx pod-install`
 
-On Windows, you need to [`manually link the module`](###Manual-installation) (until autolinking is published in RNW 63).
+On Windows with RNW 62 or earlier, you need to [`manually link the module`](###Manual-installation) (on RNW 63 and later autolinking will work).
 
 ### Mostly automatic installation
 
@@ -43,7 +43,7 @@ for react-native =< 0.59.X
 
 <details>
 <summary>Manually link the library on Android</summary>
-   
+
 #### `android/settings.gradle`
 ```groovy
 include ':react-native-community-checkbox'
@@ -127,7 +127,7 @@ import CheckBox from '@react-native-community/checkbox';
 
 ```javascript
   const [toggleCheckBox, setToggleCheckBox] = useState(false)
-  
+
   <CheckBox
     disabled={false}
     value={toggleCheckBox}
@@ -148,8 +148,8 @@ Check out the [example project](example) for more examples.
 | onChange      | function | Invoked on change with the native event.                                                                                                                                                                              |
 | onValueChange | function | Invoked with the new boolean value when it changes.                                                                                                                                                                   |
 | value         | boolean  | The value of the checkbox. If true the checkbox will be turned on. Default value is false.                                                                                                                            |
-| testID        | string   | Used to locate this view in end-to-end tests.                                                                                                                                                                         
-| disabled      | boolean | If true the user won't be able to toggle the checkbox. Default value is false.                      
+| testID        | string   | Used to locate this view in end-to-end tests.
+| disabled      | boolean | If true the user won't be able to toggle the checkbox. Default value is false.
 
 
 ## Android Only Props
@@ -174,7 +174,7 @@ Check out the [example project](example) for more examples.
 | offAnimationType   | 'stroke' or 'fill' or 'bounce' or 'flat' or 'one-stroke' or 'fade'  | The type of animation to use when the checkbox gets unchecked. 'stroke'|
 
 ## Windows Props
-Implemented most of iOS and Android props. 
+Implemented most of iOS and Android props.
 Defaults for color styling can be referenced here:
 https://docs.microsoft.com/en-us/dotnet/framework/wpf/controls/checkbox-styles-and-templates
 
