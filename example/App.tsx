@@ -88,7 +88,7 @@ export default class App extends Component<Props, State> {
           lineWidth={2}
           hideBox={false}
           boxType={'circle'}
-          tintColor={'#9E663C'}
+          tintColors={'#9E663C'}
           onCheckColor={'#6F763F'}
           onFillColor={'#4DABEC'}
           onTintColor={'#F4DCF8'}
@@ -160,7 +160,7 @@ export default class App extends Component<Props, State> {
         />
         <Text>{`[value: ${this.state.value1}]`}</Text>
         <CheckBox
-          tintColor={'green'}
+          tintColors={'green'}
           onCheckColor={'red'}
           onFillColor={'yellow'}
           onTintColor={'#80F4E8'}
