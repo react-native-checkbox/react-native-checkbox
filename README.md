@@ -156,7 +156,7 @@ Check out the [example project](example) for more examples.
 
 | Prop name     | Type    | Description                                                                                                                                                                                                           |
 | ------------- | ------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------                                                                                                             |
-| tintColors    | string  | An object with the following shape: `{ true?: ?ColorValue, false?: ?ColorValue }`. The color value for `true` will be used when the checkbox is checked, and the color value for `false` will be used when it is off. |
+| tintColors    | object  | An object with the following shape: `{ true?: ?ColorValue, false?: ?ColorValue }`. The color value for `true` will be used when the checkbox is checked, and the color value for `false` will be used when it is off. |
 
 ## IOS Only Props
 
