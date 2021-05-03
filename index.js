@@ -1,4 +1,4 @@
 import CheckBox from './dist/CheckBox';
 
-export CheckBox;
+export default CheckBox;
 
