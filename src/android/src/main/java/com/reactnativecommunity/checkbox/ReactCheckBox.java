@@ -7,31 +7,37 @@
 package com.reactnativecommunity.checkbox;
 
 import android.content.Context;
+
+import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatCheckBox;
 
 /** CheckBox that has its value controlled by JS. */
 /*package*/ class ReactCheckBox extends AppCompatCheckBox {
 
-  private boolean mAllowChange;
+  private OnCheckedChangeListener mOnCheckedChangeListener = null;
 
   public ReactCheckBox(Context context) {
     super(context);
-    mAllowChange = true;
   }
 
   @Override
   public void setChecked(boolean checked) {
-    if (mAllowChange) {
-      mAllowChange = false;
-      super.setChecked(checked);
+    // Log.d("checkbox", "checked: " + checked + " mAllowChange: " + mAllowChange);
+    if (mOnCheckedChangeListener != null) {
+      mOnCheckedChangeListener.onCheckedChanged(this, checked);
     }
+  }
+
+  @Override
+  public void setOnCheckedChangeListener(@Nullable OnCheckedChangeListener listener) {
+    super.setOnCheckedChangeListener(listener);
+    mOnCheckedChangeListener = listener;
   }
 
   /*package*/ void setOn(boolean on) {
     // If the checkbox has a different value than the value sent by JS, we must change it.
-    if (isChecked() != on) {
-      super.setChecked(on);
-    }
-    mAllowChange = true;
+    // Log.d("checkbox", "on: " + on + " mAllowChange: " + mAllowChange);
+    if (isChecked() == on) return;
+    super.setChecked(on);
   }
 }
