@@ -60,6 +60,12 @@ describe('render IOS <Checkbox />', () => {
     expect(tree).toMatchSnapshot();
   });
 
+  it('renders IOS Checkbox with accessible={false} props', () => {
+    const tree = renderer.create(<IosCheckbox accessible={false} />).toJSON();
+
+    expect(tree).toMatchSnapshot();
+  });
+
   it('renders IOS Checkbox with full setting', () => {
     const tree = renderer
       .create(
