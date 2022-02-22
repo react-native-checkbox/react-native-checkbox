@@ -112,9 +112,16 @@ class CheckBox extends React.Component<Props> {
   };
 
   render() {
-    // Do not use onValueChange directly from props
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const {accessible, style, onValueChange, disabled, value, ...props} = this.props;
+    const {
+      accessible,
+      style,
+      // Do not use onValueChange directly from props
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      onValueChange,
+      disabled,
+      value,
+      ...props
+    } = this.props;
     return (
       <View
         pointerEvents={disabled ? 'none' : 'auto'}
@@ -124,8 +131,7 @@ class CheckBox extends React.Component<Props> {
           checked: value || false,
           disabled: disabled || false,
         }}
-        accessibilityValue={value || false ? 'on' : 'off'}
-      >
+        accessibilityValue={{text: value || false ? 'on' : 'off'}}>
         <IOSCheckBoxNativeComponent
           {...props}
           // @ts-ignore TODO: implement the type of IOSCheckBoxNativeComponent

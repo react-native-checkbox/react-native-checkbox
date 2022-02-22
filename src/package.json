@@ -1,6 +1,6 @@
 {
   "name": "@react-native-community/checkbox",
-  "version": "0.5.9",
+  "version": "0.5.10",
   "description": "React Native Checkbox native modules for Android , iOS and Windows",
   "keywords": [
     "checkbox",
@@ -51,7 +51,7 @@
     "react-native-windows": {
       "optional": true
     }
-  }
+  },
   "publishConfig": {
     "access": "public"
   },
