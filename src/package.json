@@ -47,6 +47,11 @@
     "react-native": ">= 0.62",
     "react-native-windows": ">=0.62"
   },
+  "peerDependenciesMeta": {
+    "react-native-windows": {
+      "optional": true
+    }
+  }
   "publishConfig": {
     "access": "public"
   },
