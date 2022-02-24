@@ -120,10 +120,12 @@ class CheckBox extends React.Component<Props> {
       onValueChange,
       disabled,
       value,
+      testID,
       ...props
     } = this.props;
     return (
       <View
+        testID={testID}
         pointerEvents={disabled ? 'none' : 'auto'}
         accessible={accessible != null ? accessible : true}
         accessibilityRole="checkbox"
