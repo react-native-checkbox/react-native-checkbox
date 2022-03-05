@@ -136,6 +136,7 @@ class CheckBox extends React.Component<Props> {
         accessibilityValue={{text: value || false ? 'on' : 'off'}}>
         <IOSCheckBoxNativeComponent
           {...props}
+          value={value}
           // @ts-ignore TODO: implement the type of IOSCheckBoxNativeComponent
           style={[styles.rctCheckBox, style]}
           ref={this._setNativeRef}
