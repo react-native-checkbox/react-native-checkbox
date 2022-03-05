@@ -71,6 +71,11 @@ exports[`render IOS <Checkbox /> renders IOS Checkbox with accessible={false} pr
       "disabled": false,
     }
   }
+  accessibilityValue={
+    Object {
+      "text": "off",
+    }
+  }
   accessible={false}
   pointerEvents="auto"
 >
@@ -98,6 +103,11 @@ exports[`render IOS <Checkbox /> renders IOS Checkbox with full setting 1`] = `
     Object {
       "checked": false,
       "disabled": false,
+    }
+  }
+  accessibilityValue={
+    Object {
+      "text": "off",
     }
   }
   accessible={true}
@@ -141,6 +151,11 @@ exports[`render IOS <Checkbox /> renders IOS Checkbox without disabled props 1`]
       "disabled": false,
     }
   }
+  accessibilityValue={
+    Object {
+      "text": "on",
+    }
+  }
   accessible={true}
   pointerEvents="auto"
 >
@@ -169,6 +184,11 @@ exports[`render IOS <Checkbox /> renders disabled IOS Checkbox 1`] = `
     Object {
       "checked": true,
       "disabled": true,
+    }
+  }
+  accessibilityValue={
+    Object {
+      "text": "on",
     }
   }
   accessible={true}
@@ -201,6 +221,11 @@ exports[`render IOS <Checkbox /> renders disabled false IOS Checkbox 1`] = `
       "disabled": false,
     }
   }
+  accessibilityValue={
+    Object {
+      "text": "on",
+    }
+  }
   accessible={true}
   pointerEvents="auto"
 >
@@ -231,6 +256,11 @@ exports[`render IOS <Checkbox /> renders enabled IOS Checkbox 1`] = `
       "disabled": false,
     }
   }
+  accessibilityValue={
+    Object {
+      "text": "off",
+    }
+  }
   accessible={true}
   pointerEvents="auto"
 >
@@ -258,6 +288,11 @@ exports[`render IOS <Checkbox /> renders hideBox IOS Checkbox 1`] = `
     Object {
       "checked": true,
       "disabled": false,
+    }
+  }
+  accessibilityValue={
+    Object {
+      "text": "on",
     }
   }
   accessible={true}
