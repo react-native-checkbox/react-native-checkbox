@@ -17,7 +17,7 @@ import {
   NativeSyntheticEvent,
 } from 'react-native';
 // @ts-ignore setAndForwardRef type does not exist in @types/react-native
-import setAndForwardRef from 'react-native/Libraries/Utilities/setAndForwardRef';
+import setAndForwardRef from './setAndForwardRef';
 
 import AndroidCheckBoxNativeComponent from './AndroidCheckBoxNativeComponent';
 
