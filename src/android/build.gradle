@@ -20,6 +20,14 @@ def getExtOrIntegerDefault(name) {
     return rootProject.ext.has(name) ? rootProject.ext.get(name) : (project.properties['ReactNativeCheckBox_' + name]).toInteger()
 }
 
+def isNewArchitectureEnabled() {
+  // To opt-in for the New Architecture, you can either:
+  // - Set `newArchEnabled` to true inside the `gradle.properties` file
+  // - Invoke gradle with `-newArchEnabled=true`
+  // - Set an environment variable `ORG_GRADLE_PROJECT_newArchEnabled=true`
+  return project.hasProperty("newArchEnabled") && project.newArchEnabled == "true"
+}
+
 android {
     compileSdkVersion getExtOrIntegerDefault('compileSdkVersion')
     buildToolsVersion getExtOrDefault('buildToolsVersion')
@@ -27,6 +35,7 @@ android {
     defaultConfig {
         minSdkVersion getExtOrIntegerDefault('minSdkVersion')
         targetSdkVersion getExtOrIntegerDefault('targetSdkVersion')
+        buildConfigField "boolean", "IS_NEW_ARCHITECTURE_ENABLED", isNewArchitectureEnabled().toString()
     }
 
     lintOptions {
@@ -42,4 +51,4 @@ repositories {
 dependencies {
     implementation 'com.facebook.react:react-native:+'
 }
-  
+
