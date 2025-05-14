@@ -45,8 +45,8 @@ public class ReactCheckBoxManager extends SimpleViewManager<ReactCheckBox> {
                 .getNativeModule(UIManagerModule.class).getEventDispatcher();
             }
             eventDispatcher.dispatchEvent(new ReactCheckBoxEvent(buttonView.getId(), isChecked));
-          } catch (Exception e) {
-            throw new RuntimeException(e);
+          } catch (NullPointerException | IllegalStateException e) {
+            android.util.Log.e("ReactCheckBoxManager", "Error dispatching checkbox event", e);
           }
         }
 
