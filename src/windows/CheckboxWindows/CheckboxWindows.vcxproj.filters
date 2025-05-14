@@ -19,11 +19,11 @@
   <ItemGroup>
     <ClInclude Include="pch.h" />
     <ClInclude Include="CheckboxViewManager.h" />
-    <ClCompile Include="CheckboxView.h" />
-    <ClCompile Include="ReactPackageProvider.h" />
+    <ClInclude Include="resource.h" />
   </ItemGroup>
   <ItemGroup>
     <Midl Include="CheckboxView.idl" />
+    <Midl Include="ReactPackageProvider.idl" />
   </ItemGroup>
   <ItemGroup>
     <None Include="CheckboxWindows.def" />
@@ -34,5 +34,10 @@
   </ItemGroup>
   <ItemGroup>
     <Text Include="readme.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="CheckboxWindows.rc">
+      <Filter>Resources</Filter>
+    </ResourceCompile>
   </ItemGroup>
 </Project>

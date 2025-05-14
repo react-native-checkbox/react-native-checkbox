@@ -17,9 +17,12 @@ import com.facebook.react.bridge.ReactContext;
 import com.facebook.react.bridge.ReadableMap;
 import com.facebook.react.uimanager.SimpleViewManager;
 import com.facebook.react.uimanager.ThemedReactContext;
+import com.facebook.react.uimanager.UIManagerHelper;
 import com.facebook.react.uimanager.UIManagerModule;
 import com.facebook.react.uimanager.ViewProps;
 import com.facebook.react.uimanager.annotations.ReactProp;
+import com.facebook.react.uimanager.common.UIManagerType;
+import com.facebook.react.uimanager.events.EventDispatcher;
 
 import javax.annotation.Nullable;
 
@@ -33,9 +36,18 @@ public class ReactCheckBoxManager extends SimpleViewManager<ReactCheckBox> {
         @Override
         public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
           ReactContext reactContext = getReactContext(buttonView);
-          reactContext
-              .getNativeModule(UIManagerModule.class).getEventDispatcher()
-              .dispatchEvent(new ReactCheckBoxEvent(buttonView.getId(), isChecked));
+          EventDispatcher eventDispatcher;
+          try {
+            if (BuildConfig.IS_NEW_ARCHITECTURE_ENABLED) {
+              eventDispatcher = UIManagerHelper.getUIManager(reactContext, UIManagerType.FABRIC).getEventDispatcher();
+            } else {
+              eventDispatcher = reactContext
+                .getNativeModule(UIManagerModule.class).getEventDispatcher();
+            }
+            eventDispatcher.dispatchEvent(new ReactCheckBoxEvent(buttonView.getId(), isChecked));
+          } catch (NullPointerException | IllegalStateException e) {
+            android.util.Log.e("ReactCheckBoxManager", "Error dispatching checkbox event", e);
+          }
         }
 
         private ReactContext getReactContext(CompoundButton buttonView) {
