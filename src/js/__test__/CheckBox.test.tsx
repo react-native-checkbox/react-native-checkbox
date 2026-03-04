@@ -70,6 +70,7 @@ describe('render IOS <Checkbox />', () => {
     const tree = renderer
       .create(
         <IosCheckbox
+          accessibilityLabel="Test Checkbox"
           value={false}
           onValueChange={() => {}}
           onAnimationDidStop={() => {}}

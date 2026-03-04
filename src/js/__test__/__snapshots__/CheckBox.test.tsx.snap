@@ -98,6 +98,7 @@ exports[`render IOS <Checkbox /> renders IOS Checkbox with accessible={false} pr
 
 exports[`render IOS <Checkbox /> renders IOS Checkbox with full setting 1`] = `
 <View
+  accessibilityLabel="Test Checkbox"
   accessibilityRole="checkbox"
   accessibilityState={
     Object {
