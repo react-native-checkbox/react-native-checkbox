@@ -55,7 +55,8 @@ function setAndForwardRef({
       forwardedRef(ref);
     } else if (typeof forwardedRef === 'object' && forwardedRef != null) {
       // Handle createRef-based refs
-      forwardedRef = ref;
+      // @ts-ignore - We need to set current even though it's readonly
+      forwardedRef.current = ref;
     }
   };
 }

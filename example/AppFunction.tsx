@@ -18,7 +18,7 @@ const instructions = Platform.select({
 });
 
 const isIOS = Platform.OS === 'ios';
-
+console.log('Platform.OS:', Platform.OS);
 export default function App() {
   const [value, setValue] = useState(false);
 

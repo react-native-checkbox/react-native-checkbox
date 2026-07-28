@@ -9,7 +9,7 @@
     "declaration": true,                   /* Generates corresponding '.d.ts' file. */
     "declarationMap": false,                /* Generates a sourcemap for each corresponding '.d.ts' file. */
     "outDir": "src/dist",                        /* Redirect output structure to the directory. */
-    "rootDir": "src/js",                       /* Specify the root directory of input files. Use to control the output directory structure with --outDir. */
+    "rootDir": "src",                       /* Specify the root directory of input files. Use to control the output directory structure with --outDir. */
     "types":["jest"],
     /* Strict Type-Checking Options */
     "strict": true,                           /* Enable all strict type-checking options. */
@@ -17,10 +17,16 @@
     "paths": {"*":["*","*.ios","*.android", "*.windows"]},                  /* A series of entries which re-map imports to lookup locations relative to the 'baseUrl'. */
     "esModuleInterop": true                   /* Enables emit interoperability between CommonJS and ES Modules via creation of namespace objects for all imports. Implies 'allowSyntheticDefaultImports'. */
   },
+  "include": [
+    "src/js/**/*",
+    "src/specs/**/*"
+  ],
   "exclude": [
     "node_modules",
     "**/__test__/**/*",
     "src/typings",
+    "src/dist",
+    "src/windows",
     "example/**/*"
   ]
 }
