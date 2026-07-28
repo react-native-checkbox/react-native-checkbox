@@ -15,6 +15,7 @@
 
   "scripts": {
     "build": "tsc",
+    "prepublishOnly": "npm run build",
     "windows": "npx @react-native-community/cli run-windows",
     "test:windows": "jest --config jest.config.windows.js"
   },
