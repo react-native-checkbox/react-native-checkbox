@@ -1,5 +1,5 @@
 # `@react-native-community/checkbox`
-[![React Native Checkbox CI](https://github.com/react-native-checkbox/react-native-checkbox/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/react-native-checkbox/react-native-checkbox/actions/workflows/ci.yml)
+[![React Native Checkbox CI](https://github.com/react-native-checkbox/react-native-checkbox/actions/workflows/ci.yml/badge.svg?branch=develop)](https://github.com/react-native-checkbox/react-native-checkbox/actions/workflows/ci.yml)
 ![Supports Android, iOS and Windows](https://img.shields.io/badge/platforms-android%20%7C%20ios%20%7C%20windows-lightgrey.svg) ![MIT License](https://img.shields.io/npm/l/@react-native-community/checkbox.svg) [![npm version](https://img.shields.io/npm/v/@react-native-community/checkbox.svg?style=flat)](https://www.npmjs.com/package/@react-native-community/checkbox) [![Lean Core Extracted](https://img.shields.io/badge/Lean%20Core-Extracted-brightgreen.svg)](https://github.com/facebook/react-native/issues/23313)
 
 React Native component for Checkbox
@@ -12,11 +12,24 @@ Android Example             |  IOS Example | Windows Example             |
 
 ## Support
 
-| RN version     | Checkbox version      |
-| --------       | ----------------      |
-| > 0.60 & < 0.62   |  >= 0.3 (Support IOS from 0.4) |
-| < 0.60         |  0.2 (only Android)   |
-| >= 0.62 to run on Windows | 0.5        |
+| RN version              | Checkbox version               |
+| ----------------------- | ------------------------------ |
+| >= 0.76 (New Architecture) | >= 0.5.20                    |
+| >= 0.62 to run on Windows  | 0.5                          |
+| > 0.60 & < 0.62         | >= 0.3 (Support iOS from 0.4)  |
+| < 0.60                  | 0.2 (only Android)             |
+
+### New Architecture
+
+The library supports the React Native New Architecture (Fabric/TurboModules):
+
+- **Android** and **Windows** run as native Fabric components.
+- **iOS** runs through the New Architecture interop layer (it is not yet a
+  native Fabric component). It works under the New Architecture, but a full
+  iOS codegen migration is still tracked in
+  [#211](https://github.com/react-native-checkbox/react-native-checkbox/issues/211).
+
+The latest versions are developed and tested against React Native 0.82.
 
 ## Getting started
 
@@ -30,17 +43,15 @@ On iOS, install cocoapods:
 
 `npx pod-install`
 
-On Windows with RNW 62 or earlier, you need to [`manually link the module`](###Manual-installation) (on RNW 63 and later autolinking will work).
+### Autolinking
 
-### Mostly automatic installation
+On react-native >= 0.60 (and react-native-windows >= 0.63), autolinking takes
+care of linking the module on iOS, Android, and Windows — no extra steps are
+needed beyond installing the package (and running `pod install` on iOS).
 
-From react-native >= 0.60 autolinking will take care of the link (on iOS and Android)
+### Manual installation (legacy)
 
-for react-native =< 0.59.X
-
-`react-native link @react-native-community/checkbox`
-
-### Manual installation
+<blockquote>Only needed for react-native &lt; 0.60 or react-native-windows &lt; 0.63.</blockquote>
 
 <details>
 <summary>Manually link the library on Android</summary>
@@ -82,26 +93,26 @@ protected List<ReactPackage> getPackages() {
 <details>
 <summary>Manually link the library on Windows</summary>
 
-#### Add the CheckboxWindows project to your solution
+#### Add the Checkbox project to your solution
 
-1. Open the solution in Visual Studio 2019.
+1. Open the solution in Visual Studio.
 2. Right-click solution icon in Solution Explorer > Add > Existing Project.
-   Select 'D:\pathToYourApp\node_modules\@react-native-community\checkbox\windows\CheckboxWindows\CheckboxWindows.vcxproj'.
+   Select `<pathToYourApp>\node_modules\@react-native-community\checkbox\windows\Checkbox\Checkbox.vcxproj`.
 
 #### **windows/myapp.sln**
 
-Add a reference to `CheckboxWindows` to your main application project. From Visual Studio 2019:
+Add a reference to `Checkbox` to your main application project. From Visual Studio:
 
 Right-click main application project > Add > Reference...
-Check 'CheckboxWindows' from the 'Project > Solution' tab on the left.
+Check 'Checkbox' from the 'Project > Solution' tab on the left.
 
 #### **pch.h**
 
-Add `#include "winrt/CheckboxWindows.h"`.
+Add `#include "winrt/Checkbox.h"`.
 
 #### **app.cpp**
 
-Add `PackageProviders().Append(winrt::CheckboxWindows::ReactPackageProvider());` before `InitializeComponent();`.
+Add `PackageProviders().Append(winrt::Checkbox::ReactPackageProvider());` before `InitializeComponent();`.
 
 </details>
 
@@ -135,6 +146,12 @@ import CheckBox from '@react-native-community/checkbox';
     onValueChange={(newValue) => setToggleCheckBox(newValue)}
   />
 ```
+
+`CheckBox` is a **controlled component**: it renders the `value` prop and does
+not keep its own internal state. You must update `value` (usually from
+`onValueChange`) for the checkbox to reflect a tap. If `value` is not updated,
+the checkbox stays in the state you passed — this is now consistent across
+Android, iOS, and Windows.
 
 Check out the [example project](example) for more examples.
 

@@ -97,7 +97,7 @@ export default class App extends Component<Props, State> {
           lineWidth={2}
           hideBox={false}
           boxType={'circle'}
-          tintColors={'#9E663C'}
+          tintColor={'#9E663C'}
           onCheckColor={'#6F763F'}
           onFillColor={'#4DABEC'}
           onTintColor={'#F4DCF8'}
