@@ -117,6 +117,7 @@ class CheckBox extends React.Component<Props> {
 
   render() {
     const {
+      accessibilityLabel,
       accessible,
       style,
       // Do not use onValueChange directly from props
@@ -132,6 +133,7 @@ class CheckBox extends React.Component<Props> {
         testID={testID}
         pointerEvents={disabled ? 'none' : 'auto'}
         accessible={accessible != null ? accessible : true}
+        accessibilityLabel={accessibilityLabel}
         accessibilityRole="checkbox"
         accessibilityState={{
           checked: value || false,

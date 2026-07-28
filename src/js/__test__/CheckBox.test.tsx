@@ -64,6 +64,7 @@ describe('render IOS <Checkbox />', () => {
   it('renders IOS Checkbox with full setting', () => {
     const {toJSON} = render(
       <IosCheckbox
+        accessibilityLabel="Test Checkbox"
         value={false}
         onValueChange={() => {}}
         onAnimationDidStop={() => {}}
