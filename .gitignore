@@ -53,4 +53,7 @@ dist
 .tmp/
 src/dist
 
+# test coverage reports
+coverage/
+
 */ios/Pods

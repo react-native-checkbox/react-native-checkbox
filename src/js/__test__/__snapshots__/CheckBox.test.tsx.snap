@@ -9,8 +9,8 @@ exports[`render Android <Checkbox /> renders Android Checkbox with value 1`] = `
   onResponderTerminationRequest={[Function]}
   onStartShouldSetResponder={[Function]}
   style={
-    Array [
-      Object {
+    [
+      {
         "height": 32,
         "width": 32,
       },
@@ -31,8 +31,8 @@ exports[`render Android <Checkbox /> renders disabled Android Checkbox 1`] = `
   onResponderTerminationRequest={[Function]}
   onStartShouldSetResponder={[Function]}
   style={
-    Array [
-      Object {
+    [
+      {
         "height": 32,
         "width": 32,
       },
@@ -51,8 +51,8 @@ exports[`render Android <Checkbox /> renders enabled Android Checkbox 1`] = `
   onResponderTerminationRequest={[Function]}
   onStartShouldSetResponder={[Function]}
   style={
-    Array [
-      Object {
+    [
+      {
         "height": 32,
         "width": 32,
       },
@@ -66,13 +66,13 @@ exports[`render IOS <Checkbox /> renders IOS Checkbox with accessible={false} pr
 <View
   accessibilityRole="checkbox"
   accessibilityState={
-    Object {
+    {
       "checked": false,
       "disabled": false,
     }
   }
   accessibilityValue={
-    Object {
+    {
       "text": "off",
     }
   }
@@ -83,8 +83,8 @@ exports[`render IOS <Checkbox /> renders IOS Checkbox with accessible={false} pr
     forwardedRef={null}
     onValueChange={[Function]}
     style={
-      Array [
-        Object {
+      [
+        {
           "backgroundColor": "transparent",
           "height": 32,
           "width": 32,
@@ -100,13 +100,13 @@ exports[`render IOS <Checkbox /> renders IOS Checkbox with full setting 1`] = `
 <View
   accessibilityRole="checkbox"
   accessibilityState={
-    Object {
+    {
       "checked": false,
       "disabled": false,
     }
   }
   accessibilityValue={
-    Object {
+    {
       "text": "off",
     }
   }
@@ -127,8 +127,8 @@ exports[`render IOS <Checkbox /> renders IOS Checkbox with full setting 1`] = `
     onTintColor="#F4DCF8"
     onValueChange={[Function]}
     style={
-      Array [
-        Object {
+      [
+        {
           "backgroundColor": "transparent",
           "height": 32,
           "width": 32,
@@ -146,13 +146,13 @@ exports[`render IOS <Checkbox /> renders IOS Checkbox without disabled props 1`]
 <View
   accessibilityRole="checkbox"
   accessibilityState={
-    Object {
+    {
       "checked": true,
       "disabled": false,
     }
   }
   accessibilityValue={
-    Object {
+    {
       "text": "on",
     }
   }
@@ -163,8 +163,8 @@ exports[`render IOS <Checkbox /> renders IOS Checkbox without disabled props 1`]
     forwardedRef={null}
     onValueChange={[Function]}
     style={
-      Array [
-        Object {
+      [
+        {
           "backgroundColor": "transparent",
           "height": 32,
           "width": 32,
@@ -181,13 +181,13 @@ exports[`render IOS <Checkbox /> renders disabled IOS Checkbox 1`] = `
 <View
   accessibilityRole="checkbox"
   accessibilityState={
-    Object {
+    {
       "checked": true,
       "disabled": true,
     }
   }
   accessibilityValue={
-    Object {
+    {
       "text": "on",
     }
   }
@@ -198,8 +198,8 @@ exports[`render IOS <Checkbox /> renders disabled IOS Checkbox 1`] = `
     forwardedRef={null}
     onValueChange={[Function]}
     style={
-      Array [
-        Object {
+      [
+        {
           "backgroundColor": "transparent",
           "height": 32,
           "width": 32,
@@ -216,13 +216,13 @@ exports[`render IOS <Checkbox /> renders disabled false IOS Checkbox 1`] = `
 <View
   accessibilityRole="checkbox"
   accessibilityState={
-    Object {
+    {
       "checked": true,
       "disabled": false,
     }
   }
   accessibilityValue={
-    Object {
+    {
       "text": "on",
     }
   }
@@ -233,8 +233,8 @@ exports[`render IOS <Checkbox /> renders disabled false IOS Checkbox 1`] = `
     forwardedRef={null}
     onValueChange={[Function]}
     style={
-      Array [
-        Object {
+      [
+        {
           "backgroundColor": "transparent",
           "height": 32,
           "width": 32,
@@ -251,13 +251,13 @@ exports[`render IOS <Checkbox /> renders enabled IOS Checkbox 1`] = `
 <View
   accessibilityRole="checkbox"
   accessibilityState={
-    Object {
+    {
       "checked": false,
       "disabled": false,
     }
   }
   accessibilityValue={
-    Object {
+    {
       "text": "off",
     }
   }
@@ -268,8 +268,8 @@ exports[`render IOS <Checkbox /> renders enabled IOS Checkbox 1`] = `
     forwardedRef={null}
     onValueChange={[Function]}
     style={
-      Array [
-        Object {
+      [
+        {
           "backgroundColor": "transparent",
           "height": 32,
           "width": 32,
@@ -285,13 +285,13 @@ exports[`render IOS <Checkbox /> renders hideBox IOS Checkbox 1`] = `
 <View
   accessibilityRole="checkbox"
   accessibilityState={
-    Object {
+    {
       "checked": true,
       "disabled": false,
     }
   }
   accessibilityValue={
-    Object {
+    {
       "text": "on",
     }
   }
@@ -303,8 +303,8 @@ exports[`render IOS <Checkbox /> renders hideBox IOS Checkbox 1`] = `
     hideBox={true}
     onValueChange={[Function]}
     style={
-      Array [
-        Object {
+      [
+        {
           "backgroundColor": "transparent",
           "height": 32,
           "width": 32,
@@ -315,4 +315,81 @@ exports[`render IOS <Checkbox /> renders hideBox IOS Checkbox 1`] = `
     value={true}
   />
 </View>
+`;
+
+exports[`render Windows <Checkbox /> renders Windows Checkbox with custom colors 1`] = `
+<RNCCheckbox
+  disabled={false}
+  forwardedRef={null}
+  onChange={[Function]}
+  onCheckColor="#6F763F"
+  onFillColor="#4DABEC"
+  onTintColor="#F4DCF8"
+  onValueChange={[Function]}
+  style={
+    [
+      {
+        "height": 32,
+        "width": 32,
+      },
+      undefined,
+    ]
+  }
+  tintColor="#9E663C"
+  value={true}
+/>
+`;
+
+exports[`render Windows <Checkbox /> renders Windows Checkbox with value 1`] = `
+<RNCCheckbox
+  disabled={false}
+  forwardedRef={null}
+  onChange={[Function]}
+  style={
+    [
+      {
+        "height": 32,
+        "width": 32,
+      },
+      undefined,
+    ]
+  }
+  value={true}
+/>
+`;
+
+exports[`render Windows <Checkbox /> renders disabled Windows Checkbox 1`] = `
+<RNCCheckbox
+  disabled={true}
+  forwardedRef={null}
+  onChange={[Function]}
+  style={
+    [
+      {
+        "height": 32,
+        "width": 32,
+      },
+      undefined,
+    ]
+  }
+  value={false}
+/>
+`;
+
+exports[`render Windows <Checkbox /> renders enabled Windows Checkbox 1`] = `
+<RNCCheckbox
+  disabled={false}
+  forwardedRef={null}
+  onChange={[Function]}
+  style={
+    [
+      {
+        "height": 32,
+        "width": 32,
+      },
+      undefined,
+    ]
+  }
+  value={false}
+/>
 `;

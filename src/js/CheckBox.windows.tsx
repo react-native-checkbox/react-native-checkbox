@@ -7,7 +7,12 @@
 'use strict';
 
 import React from 'react';
-import {StyleSheet, ViewProps, NativeMethods, NativeSyntheticEvent} from 'react-native';
+import {
+  StyleSheet,
+  ViewProps,
+  NativeMethods,
+  NativeSyntheticEvent,
+} from 'react-native';
 import RNCCheckboxNativeComponent from './RNCCheckboxNativeComponent';
 // @ts-ignore setAndForwardRef type does not exist in @types/react-native
 import setAndForwardRef from './setAndForwardRef';

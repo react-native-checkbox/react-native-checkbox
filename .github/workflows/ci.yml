@@ -1,20 +1,33 @@
 name: React Native Checkbox CI
-on: [push]
+on: [push, pull_request]
+
+# Cancel in-progress runs for the same ref (e.g. new push to a PR) to save CI time.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
-  build:
-    name: Test
+  test:
+    name: Test (Node ${{ matrix.node }})
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        # react-native-windows@0.82 requires Node >= 22.
+        node: [22, 24]
     steps:
-      - uses: actions/checkout@v2
-      - uses: borales/actions-yarn@v2.3.0
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
-          cmd: install
-      - uses: borales/actions-yarn@v2.3.0
-        with:
-          cmd: test:jest
-      - uses: borales/actions-yarn@v2.3.0
-        with:
-          cmd: test:type-check
-      - uses: borales/actions-yarn@v2.3.0
-        with:
-          cmd: test:eslint
+          node-version: ${{ matrix.node }}
+          cache: yarn
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+      - name: Jest
+        run: yarn test:coverage
+      - name: Type check
+        run: yarn test:type-check
+      - name: ESLint
+        run: yarn test:eslint
+      - name: Build
+        run: yarn build
