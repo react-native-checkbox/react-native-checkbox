@@ -104,11 +104,15 @@ class CheckBox extends React.Component<Props> {
   _onChange = (event: CheckBoxEvent) => {
     const {onValueChange, onChange} = this.props;
 
-    const {value} = event.nativeEvent;
+    // Reset the native checkbox back to the controlled `value` prop so the
+    // component behaves as a controlled input. Without this, iOS would keep
+    // whatever state the native tap produced, ignoring the `value` prop.
+    // This mirrors the Android implementation.
+    const value = this.props.value || false;
     // @ts-ignore
     nullthrows(this._nativeRef).setNativeProps({value});
     onChange && onChange(event);
-    onValueChange && onValueChange(value);
+    onValueChange && onValueChange(event.nativeEvent.value);
   };
 
   render() {
