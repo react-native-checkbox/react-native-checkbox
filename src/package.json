@@ -1,6 +1,6 @@
 {
   "name": "@react-native-community/checkbox",
-  "version": "1.0.0",
+  "version": "0.6.0",
   "description": "React Native Checkbox native modules for Android, iOS, and Windows",
   "keywords": ["checkbox", "react native", "react-native"],
   "homepage": "https://github.com/react-native-community/react-native-checkbox#readme",
