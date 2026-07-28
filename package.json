@@ -2,7 +2,7 @@
   "private": true,
   "workspaces": [ "src", "example" ],
   "scripts": {
-    "test": "yarn test:jest && yarn test:eslint && test:type-check",
+    "test": "yarn test:jest && yarn test:eslint && yarn test:type-check",
     "test:eslint": "eslint 'src/js/**/*.ts' 'src/js/**/*.tsx'",
     "test:type-check": "cd src && tsc --noEmit",
     "test:jest": "jest src",

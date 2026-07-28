@@ -45,7 +45,7 @@ function setAndForwardRef({
   setLocalRef,
 }: Args): (ref: ElementRef<any>) => void {
   return function forwardRef(ref: ElementRef<any>) {
-    let forwardedRef = getForwardedRef();
+    const forwardedRef = getForwardedRef();
 
     setLocalRef(ref);
 

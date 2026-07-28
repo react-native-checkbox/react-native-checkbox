@@ -1,93 +1,85 @@
 import * as React from 'react';
-import renderer from 'react-test-renderer';
+import {render} from '@testing-library/react-native';
 import AndroidCheckbox from '../CheckBox.android';
 import IosCheckbox from '../CheckBox.ios';
 
 describe('render Android <Checkbox />', () => {
   it('renders enabled Android Checkbox', () => {
-    const tree = renderer.create(<AndroidCheckbox />).toJSON();
+    const {toJSON} = render(<AndroidCheckbox />);
 
-    expect(tree).toMatchSnapshot();
+    expect(toJSON()).toMatchSnapshot();
   });
 
   it('renders disabled Android Checkbox', () => {
-    const tree = renderer.create(<AndroidCheckbox disabled />).toJSON();
+    const {toJSON} = render(<AndroidCheckbox disabled />);
 
-    expect(tree).toMatchSnapshot();
+    expect(toJSON()).toMatchSnapshot();
   });
 
   it('renders Android Checkbox with value', () => {
-    const tree = renderer.create(<AndroidCheckbox value />).toJSON();
+    const {toJSON} = render(<AndroidCheckbox value />);
 
-    expect(tree).toMatchSnapshot();
+    expect(toJSON()).toMatchSnapshot();
   });
 });
 
 describe('render IOS <Checkbox />', () => {
   it('renders enabled IOS Checkbox', () => {
-    const tree = renderer.create(<IosCheckbox />).toJSON();
+    const {toJSON} = render(<IosCheckbox />);
 
-    expect(tree).toMatchSnapshot();
+    expect(toJSON()).toMatchSnapshot();
   });
 
   it('renders hideBox IOS Checkbox', () => {
-    const tree = renderer
-      .create(<IosCheckbox hideBox={true} value={true} />)
-      .toJSON();
+    const {toJSON} = render(<IosCheckbox hideBox={true} value={true} />);
 
-    expect(tree).toMatchSnapshot();
+    expect(toJSON()).toMatchSnapshot();
   });
 
   it('renders disabled IOS Checkbox', () => {
-    const tree = renderer
-      .create(<IosCheckbox disabled={true} value={true} />)
-      .toJSON();
+    const {toJSON} = render(<IosCheckbox disabled={true} value={true} />);
 
-    expect(tree).toMatchSnapshot();
+    expect(toJSON()).toMatchSnapshot();
   });
 
   it('renders disabled false IOS Checkbox', () => {
-    const tree = renderer
-      .create(<IosCheckbox disabled={false} value={true} />)
-      .toJSON();
+    const {toJSON} = render(<IosCheckbox disabled={false} value={true} />);
 
-    expect(tree).toMatchSnapshot();
+    expect(toJSON()).toMatchSnapshot();
   });
 
   it('renders IOS Checkbox without disabled props', () => {
-    const tree = renderer.create(<IosCheckbox value={true} />).toJSON();
+    const {toJSON} = render(<IosCheckbox value={true} />);
 
-    expect(tree).toMatchSnapshot();
+    expect(toJSON()).toMatchSnapshot();
   });
 
   it('renders IOS Checkbox with accessible={false} props', () => {
-    const tree = renderer.create(<IosCheckbox accessible={false} />).toJSON();
+    const {toJSON} = render(<IosCheckbox accessible={false} />);
 
-    expect(tree).toMatchSnapshot();
+    expect(toJSON()).toMatchSnapshot();
   });
 
   it('renders IOS Checkbox with full setting', () => {
-    const tree = renderer
-      .create(
-        <IosCheckbox
-          value={false}
-          onValueChange={() => {}}
-          onAnimationDidStop={() => {}}
-          lineWidth={2}
-          hideBox={false}
-          boxType={'circle'}
-          tintColor={'#9E663C'}
-          onCheckColor={'#6F763F'}
-          onFillColor={'#4DABEC'}
-          onTintColor={'#F4DCF8'}
-          animationDuration={0.5}
-          disabled={false}
-          onAnimationType={'bounce'}
-          offAnimationType={'stroke'}
-        />,
-      )
-      .toJSON();
+    const {toJSON} = render(
+      <IosCheckbox
+        value={false}
+        onValueChange={() => {}}
+        onAnimationDidStop={() => {}}
+        lineWidth={2}
+        hideBox={false}
+        boxType={'circle'}
+        tintColor={'#9E663C'}
+        onCheckColor={'#6F763F'}
+        onFillColor={'#4DABEC'}
+        onTintColor={'#F4DCF8'}
+        animationDuration={0.5}
+        disabled={false}
+        onAnimationType={'bounce'}
+        offAnimationType={'stroke'}
+      />,
+    );
 
-    expect(tree).toMatchSnapshot();
+    expect(toJSON()).toMatchSnapshot();
   });
 });
