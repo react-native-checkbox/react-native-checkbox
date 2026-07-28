@@ -316,3 +316,80 @@ exports[`render IOS <Checkbox /> renders hideBox IOS Checkbox 1`] = `
   />
 </View>
 `;
+
+exports[`render Windows <Checkbox /> renders Windows Checkbox with custom colors 1`] = `
+<RNCCheckbox
+  disabled={false}
+  forwardedRef={null}
+  onChange={[Function]}
+  onCheckColor="#6F763F"
+  onFillColor="#4DABEC"
+  onTintColor="#F4DCF8"
+  onValueChange={[Function]}
+  style={
+    [
+      {
+        "height": 32,
+        "width": 32,
+      },
+      undefined,
+    ]
+  }
+  tintColor="#9E663C"
+  value={true}
+/>
+`;
+
+exports[`render Windows <Checkbox /> renders Windows Checkbox with value 1`] = `
+<RNCCheckbox
+  disabled={false}
+  forwardedRef={null}
+  onChange={[Function]}
+  style={
+    [
+      {
+        "height": 32,
+        "width": 32,
+      },
+      undefined,
+    ]
+  }
+  value={true}
+/>
+`;
+
+exports[`render Windows <Checkbox /> renders disabled Windows Checkbox 1`] = `
+<RNCCheckbox
+  disabled={true}
+  forwardedRef={null}
+  onChange={[Function]}
+  style={
+    [
+      {
+        "height": 32,
+        "width": 32,
+      },
+      undefined,
+    ]
+  }
+  value={false}
+/>
+`;
+
+exports[`render Windows <Checkbox /> renders enabled Windows Checkbox 1`] = `
+<RNCCheckbox
+  disabled={false}
+  forwardedRef={null}
+  onChange={[Function]}
+  style={
+    [
+      {
+        "height": 32,
+        "width": 32,
+      },
+      undefined,
+    ]
+  }
+  value={false}
+/>
+`;

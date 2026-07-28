@@ -2,6 +2,7 @@ import * as React from 'react';
 import {render} from '@testing-library/react-native';
 import AndroidCheckbox from '../CheckBox.android';
 import IosCheckbox from '../CheckBox.ios';
+import WindowsCheckbox from '../CheckBox.windows';
 
 describe('render Android <Checkbox />', () => {
   it('renders enabled Android Checkbox', () => {
@@ -77,6 +78,41 @@ describe('render IOS <Checkbox />', () => {
         disabled={false}
         onAnimationType={'bounce'}
         offAnimationType={'stroke'}
+      />,
+    );
+
+    expect(toJSON()).toMatchSnapshot();
+  });
+});
+
+describe('render Windows <Checkbox />', () => {
+  it('renders enabled Windows Checkbox', () => {
+    const {toJSON} = render(<WindowsCheckbox />);
+
+    expect(toJSON()).toMatchSnapshot();
+  });
+
+  it('renders disabled Windows Checkbox', () => {
+    const {toJSON} = render(<WindowsCheckbox disabled={true} />);
+
+    expect(toJSON()).toMatchSnapshot();
+  });
+
+  it('renders Windows Checkbox with value', () => {
+    const {toJSON} = render(<WindowsCheckbox value={true} />);
+
+    expect(toJSON()).toMatchSnapshot();
+  });
+
+  it('renders Windows Checkbox with custom colors', () => {
+    const {toJSON} = render(
+      <WindowsCheckbox
+        value={true}
+        onValueChange={() => {}}
+        tintColor={'#9E663C'}
+        onCheckColor={'#6F763F'}
+        onFillColor={'#4DABEC'}
+        onTintColor={'#F4DCF8'}
       />,
     );
 
