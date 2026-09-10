@@ -61,7 +61,7 @@
   "codegenConfig": {
     "name": "RNCCheckboxSpec",
     "type": "all",
-    "jsSrcsDir": "js",
+    "jsSrcsDir": "dist/js",
     "windows": {
       "namespace": "CheckboxCodegen",
       "outputDirectory": "windows/Checkbox/codegen",
