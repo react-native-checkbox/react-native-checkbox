@@ -41,6 +41,10 @@ def supportsNamespace() {
   return major >= 8
 }
 
+if (isNewArchitectureEnabled()) {
+    apply plugin: "com.facebook.react"
+}
+
 android {
     if (supportsNamespace()) {
         namespace "com.reactnativecommunity.checkbox"
